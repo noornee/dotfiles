@@ -1,0 +1,40 @@
+#! /bin/sh
+
+bspc rule -r "*"
+
+pgrep -x sxhkd > /dev/null || sxhkd &
+$HOME/.config/polybar/launch.sh
+
+$HOME/.fehbg
+
+bspc monitor -d I II III IV V 9
+
+
+### Windows Conf ###
+bspc config border_width           0
+bspc config window_gap             20
+bspc config top_padding            0
+bspc config bottom_padding         0
+bspc config left_padding           0
+bspc config right_padding          0
+
+# Layout
+bspc config split_ratio          0.52
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+
+
+#bspc rule -a Gimp desktop='^8' state=floating follow=on
+#bspc rule -a Chromium desktop='^2'
+#bspc rule -a mplayer2 state=floating
+#bspc rule -a Kupfer.py focus=on
+#bspc rule -a Screenkey manage=off
+
+# custom
+#bspc rule -a Google-chrome
+#bspc rule -a -o  Google-chrome rectangle 500x500+100+100 center=true state=floating
+#bspc rule -a \* -o rectangle 800x600+0+0 center=true 
+
+nm-applet &
+picom --experimental-backends -b
