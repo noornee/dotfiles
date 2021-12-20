@@ -4,7 +4,7 @@
 
 # terminal emulator
 super + Return
-	kitty
+	konsole
 
 # program launcher
 super + shift + @space
@@ -122,4 +122,19 @@ super + alt + shift + {h,j,k,l}
 
 # move a floating window
 super + {Left,Down,Up,Right}
-	bspc node -v {-20 0,0 20,0 -20,20 0}
+	bspc node -v {-20 0,0 20,0 -20,20 0} 
+
+#
+# Custom configs
+#
+
+
+# Adjust Brightness
+XF86MonBrightnessUp 
+	xbacklight -inc 10
+
+XF86MonBrightnessDown
+	xbacklight -dec 10
+
+Print # screenshot with spectacle
+	spectacle

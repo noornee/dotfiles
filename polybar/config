@@ -27,7 +27,10 @@ include-file = ~/.config/polybar/modules.ini
 
 
 [bar/main]
-;monitor = ${env:MONITOR:HDMI-1}
+; monitor = ${env:MONITOR:HDMI-1}
+
+wm-restack = bspwm #this makes polybar disappear once a window is opened to its full width
+
 width = 100%
 height = 25
 radius = 5.0
@@ -46,7 +49,7 @@ padding-left = 0
 padding-right = 2
 
 module-margin-left = 1
-module-margin-right = 2
+module-margin-right = 5;2
 
 font-0 = fixed:pixelsize=10;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
@@ -54,7 +57,7 @@ font-2 = siji:pixelsize=10;1
 
 modules-left = bspwm 
 modules-center = title
-modules-right = xbacklight alsa memory cpu wlan eth battery date powermenu
+modules-right = alsa wlan eth battery date 
 
 tray-position = right
 tray-padding = 2
