@@ -1,26 +1,10 @@
-#
-# wm independent hotkeys
-#
-
-# terminal emulator
-super + Return
-	konsole
-
-# program launcher
-super + shift + @space
-	dmenu_run
-
-super + @space
-	rofi -show drun
-
-
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
 
-#
-# bspwm hotkeys
-#
+##################################################
+# BSPWM hotkeys					 
+##################################################
 
 # quit/restart bspwm
 super + alt + {q,r}
@@ -42,9 +26,13 @@ super + y
 super + g
 	bspc node -s biggest.window
 
-#
-# state/flags
-#
+
+
+
+
+##################################################
+# State/Flags				 	
+##################################################
 
 # set the window state
 super + {t,shift + t,s,f}
@@ -54,9 +42,13 @@ super + {t,shift + t,s,f}
 super + ctrl + {m,x,y,z}
 	bspc node -g {marked,locked,sticky,private}
 
-#
-# focus/swap
-#
+
+
+
+
+###################################################
+# Focus/Swap					 
+##################################################
 
 # focus the node in the given direction
 super + {_,shift + }{h,j,k,l}
@@ -88,9 +80,13 @@ super + {o,i}
 super + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
 
-#
-# preselect
-#
+
+
+
+
+##################################################
+# Preselect
+##################################################
 
 # preselect the direction
 super + ctrl + {h,j,k,l}
@@ -108,9 +104,13 @@ super + ctrl + space
 super + ctrl + shift + space
 	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
 
-#
-# move/resize
-#
+
+
+
+
+##################################################
+# Move/Resize
+##################################################
 
 # expand a window by moving one of its side outward
 super + alt + {h,j,k,l}
@@ -124,10 +124,29 @@ super + alt + shift + {h,j,k,l}
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0} 
 
-#
-# Custom configs
-#
 
+
+
+
+##################################################
+# Custom 
+##################################################
+
+# Launch konsole
+super + Return
+	konsole
+
+# Launch dmenu
+super + shift + @space
+	dmenu_run
+
+# Launch rofi
+super + @space
+	rofi -show drun
+
+# Launch dolphin
+super + e
+	dolphin
 
 # Adjust Brightness
 XF86MonBrightnessUp 
@@ -136,5 +155,6 @@ XF86MonBrightnessUp
 XF86MonBrightnessDown
 	xbacklight -dec 10
 
-Print # screenshot with spectacle
+# screenshot with spectacle
+Print 
 	spectacle
