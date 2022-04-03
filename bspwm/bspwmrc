@@ -24,17 +24,8 @@ bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
 
-
-#bspc rule -a Gimp desktop='^8' state=floating follow=on
-#bspc rule -a Chromium desktop='^2'
-#bspc rule -a mplayer2 state=floating
-#bspc rule -a Kupfer.py focus=on
-#bspc rule -a Screenkey manage=off
-
-# custom
-#bspc rule -a Google-chrome
-#bspc rule -a -o  Google-chrome rectangle 500x500+100+100 center=true state=floating
-#bspc rule -a \* -o rectangle 800x600+0+0 center=true 
+# custom rule
+bspc rule -a Zathura state=tiled
 
 nm-applet &
 picom --experimental-backends -b
