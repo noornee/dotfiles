@@ -12,7 +12,7 @@ if [[ $external_monitor_status == "connected" ]]
 then
 	xrandr --output $external_monitor --mode "1920x1080"
 	notify-send --urgency low --expire-time 2000 "connected to external monitor" $external_monitor
-else
-	xrandr --output $external_monitor --off --output $internal_monitor --primary --auto
-	notify-send --urgency low --expire-time 2000 "connected to primary monitor" $internal_monitor
+#else
+	#xrandr --output $external_monitor --off --output $internal_monitor --primary --auto
+	#notify-send --urgency low --expire-time 2000 "connected to primary monitor" $internal_monitor
 fi

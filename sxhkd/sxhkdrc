@@ -150,11 +150,15 @@ super + e
 
 # Adjust Brightness
 XF86MonBrightnessUp 
-	xbacklight -inc 10
+	xbacklight -inc 10 | notify-send -i /home/noornee/.config/CUSTOM/icons/brightness.png -u low -t 1000 -h int:value:$(xbacklight -get) "inc"
 
 XF86MonBrightnessDown
-	xbacklight -dec 10
+	xbacklight -dec 10 | notify-send -i /home/noornee/.config/CUSTOM/icons/brightness.png -u low -t 1000 -h int:value:$(xbacklight -get) "dec"
 
 # screenshot with spectacle
 Print 
 	spectacle
+
+# shutdown
+super + alt + F4
+	/home/noornee/.config/CUSTOM/scripts/power.sh

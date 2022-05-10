@@ -7,8 +7,7 @@ $HOME/.config/polybar/launch.sh
 
 $HOME/.fehbg
 
-bspc monitor -d I II III IV V VI 
-
+bspc monitor LVDS1  -d I II III IV V
 
 ### Windows Conf ###
 bspc config border_width           0

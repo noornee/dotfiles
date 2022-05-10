@@ -10,7 +10,7 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 # Launch Polybar, using default config location ~/.config/polybar/config
 
 polybar main --config=~/.config/polybar/config.ini &
-polybar external --config=~/.config/polybar/config.ini &
+#polybar external --config=~/.config/polybar/config.ini &
 
 
 echo "Polybar launched..."
