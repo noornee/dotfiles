@@ -5,7 +5,7 @@ cd $HOME/.config/
 # copies all custom configs to the dotfiles repo
 cp -r CUSTOM bspwm mpv nvim picom polybar rofi sxhkd ./dotfiles
 # deletes watch_later
-rm -r $HOME/.config/dotfiles/mpv/watch_later
+#rm -r $HOME/.config/dotfiles/mpv/watch_later
 
 # send notification
 ret_status=$?
