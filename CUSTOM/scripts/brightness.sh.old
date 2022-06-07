@@ -1,0 +1,21 @@
+#!/bin/bash
+
+function send_notification()
+{
+	dunstify -i /home/noornee/.config/CUSTOM/icons/brightness.png -u low -r 9478 -t 1000 -h int:value:$(xbacklight -get) "$1"
+}
+#XF86MonBrightnessUp 
+	#xbacklight -inc 10 | dunstify -i /home/noornee/.config/CUSTOM/icons/brightness.png -u low -r 9478 -t 1000 -h int:value:$(xbacklight -get) "inc"
+
+#XF86MonBrightnessDown
+	#xbacklight -dec 10 | dunstify -i /home/noornee/.config/CUSTOM/icons/brightness.png -u low -r 9478 -t 1000 -h int:value:$(xbacklight -get) "dec"
+
+case $1 in
+	"inc")
+		xbacklight -inc 10
+		send_notification $1;;
+	"dec")
+		xbacklight -ded 10
+		send_notification $1;;
+esac
+

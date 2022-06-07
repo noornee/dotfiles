@@ -2,7 +2,7 @@
 
 #notify-send -h int:value:100 "Working . " 
 
-prompt=$(echo -e "Reboot\nShutdown" | dmenu -i -p "Power Options: ")
+prompt=$(echo -e "Shutdown\nReboot" | dmenu -i -p "Power Options: ")
 
 #-------------------------------------------------------#
 # timer							#

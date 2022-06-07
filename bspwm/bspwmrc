@@ -1,31 +1,39 @@
 #!/bin/sh
 
-bspc rule -r "*"
+# #######################################################################
+# #                            AUTOSTART                                #
+# #######################################################################
 
-pgrep -x sxhkd > /dev/null || sxhkd &
-$HOME/.config/polybar/launch.sh
+pgrep -x sxhkd > /dev/null || sxhkd & 		# Keybindings
+$HOME/.config/polybar/launch.sh & 		# Polybar
+$HOME/.fehbg & 					# feh wallpaper
+nm-applet &		 			# NetworkManager
+picom --experimental-backends -b & 		# Compositor
+dunst & 					# Notify Daemon
 
-$HOME/.fehbg
+# #######################################################################
+# #                           WINDOWS CONFIG                            #
+# #######################################################################
 
-bspc monitor LVDS1  -d I II III IV V
+#bspc rule -r "*"
 
-### Windows Conf ###
+bspc monitor -d I II III IV V VI
+
 bspc config border_width           0
-bspc config window_gap             30 #50
+bspc config window_gap             20
 bspc config top_padding            0
 bspc config bottom_padding         0
 bspc config left_padding           0
 bspc config right_padding          0
 
-# Layout
 bspc config split_ratio          0.52
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
+# #######################################################################
+# #                               RULES                                 #
+# #######################################################################
 
-# custom rule
 bspc rule -a Zathura state=tiled
+#bspc rule -a Thunar desktop='^6'
 
-nm-applet &
-picom --experimental-backends -b
-dunst > /dev/null &

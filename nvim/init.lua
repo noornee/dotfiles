@@ -1,5 +1,7 @@
 require('mappings')
+require('conf/nvim-treesitter')
 require('settings')
 require('plugins')
 require('colorbuddy').colorscheme('gruvbox')
 require('lualine').setup()
+require('nvim-autopairs').setup()

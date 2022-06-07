@@ -26,10 +26,6 @@ super + y
 super + g
 	bspc node -s biggest.window
 
-
-
-
-
 ##################################################
 # State/Flags				 	
 ##################################################
@@ -41,10 +37,6 @@ super + {t,shift + t,s,f}
 # set the node flags
 super + ctrl + {m,x,y,z}
 	bspc node -g {marked,locked,sticky,private}
-
-
-
-
 
 ###################################################
 # Focus/Swap					 
@@ -81,9 +73,6 @@ super + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
 
 
-
-
-
 ##################################################
 # Preselect
 ##################################################
@@ -105,9 +94,6 @@ super + ctrl + shift + space
 	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
 
 
-
-
-
 ##################################################
 # Move/Resize
 ##################################################
@@ -123,9 +109,6 @@ super + alt + shift + {h,j,k,l}
 # move a floating window
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0} 
-
-
-
 
 
 ##################################################
@@ -144,21 +127,32 @@ super + shift + @space
 super + @space
 	rofi -show drun
 
-# Launch dolphin
+# Launch thunar
 super + e
-	dolphin
+	Thunar
 
-# Adjust Brightness
-XF86MonBrightnessUp 
-	xbacklight -inc 10 | notify-send -i /home/noornee/.config/CUSTOM/icons/brightness.png -u low -t 1000 -h int:value:$(xbacklight -get) "inc"
+# Launch Google Chrome
+super + alt + g
+	google-chrome-stable
 
-XF86MonBrightnessDown
-	xbacklight -dec 10 | notify-send -i /home/noornee/.config/CUSTOM/icons/brightness.png -u low -t 1000 -h int:value:$(xbacklight -get) "dec"
+# Launch Google Chorme incognito -- iykwim ;)
+super + alt + i
+	google-chrome-stable --incognito
 
 # screenshot with spectacle
 Print 
 	spectacle
 
-# shutdown
+# Adjust Brightness
+XF86MonBrightnessUp 
+	echo "up" | xargs /home/noornee/.config/CUSTOM/scripts/brightness.sh
+
+
+XF86MonBrightnessDown
+	echo "down" | xargs /home/noornee/.config/CUSTOM/scripts/brightness.sh
+
+
+# launch power script
 super + alt + F4
 	/home/noornee/.config/CUSTOM/scripts/power.sh
+

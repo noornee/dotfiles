@@ -15,3 +15,11 @@ map('n', '<C-p>', ':BufferPick<CR>', opts)
 
 -- Toggle Nerd Tree
 map('n', '<C-t>', ':NERDTreeToggle<CR>', opts)
+
+local modes = {'n', 'v'}
+for i in pairs(modes) do
+	map(modes[i], '<C-_>', ':call nerdcommenter#Comment(0, "toggle")<CR>' , opts)
+end
+
+-- Toggle Markdown Previewer
+map('n', '<A-m>', '<Plug>MarkdownPreviewToggle<CR>', opts)
