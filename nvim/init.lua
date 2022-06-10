@@ -1,5 +1,5 @@
 require('mappings')
-require('conf/nvim-treesitter')
+require('noornee/nvim-treesitter')
 require('settings')
 require('plugins')
 require('colorbuddy').colorscheme('gruvbox')

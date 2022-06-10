@@ -26,4 +26,5 @@ return require('packer').startup(function()
 			require("gitsigns").setup()
 		end
 	})
+	use({ 'norcalli/nvim-colorizer.lua' })
 end)
