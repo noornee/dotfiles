@@ -1,7 +1,7 @@
 #!/bin/bash
 
 cd $HOME/.config/
-cp -r CUSTOM bspwm mpv nvim picom polybar rofi sxhkd zathura gtk-3.0 $HOME/.zshrc ./dotfiles
+cp -r CUSTOM bspwm mpv nvim picom polybar rofi sxhkd zathura gtk-3.0/{bookmarks, settings.ini} $HOME/.zshrc ./dotfiles
 
 # send notification
 ret_status=$?
