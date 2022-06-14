@@ -1,1 +1,1 @@
-essentially copied what i needed from this repo [Adwaita-blue-dark](https://github.com/Gnostiphage/adwaita-color-gen/tree/master/generated/Adwaita-blue-dark/gtk-3.0)
+`.idk`...just some a file containing stuff i might need for later.
