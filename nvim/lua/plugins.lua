@@ -40,4 +40,10 @@ return require('packer').startup(function(use)
 		}
 	})
 	use({ 'L3MON4D3/LuaSnip' })
+	use({
+		'nvim-orgmode/orgmode',
+		config = function ()
+			require('orgmode').setup{}
+		end
+	})
 end)
