@@ -19,5 +19,6 @@ alias goenv="$HOME/Desktop/goenv"
 alias zshrc="nvim $HOME/.zshrc"
 alias doom="~/.emacs.d/bin/doom"
 alias log="$HOME/syncthing/log.sh"
+alias tmux="tmux -u"
 
 source $ZSH/oh-my-zsh.sh

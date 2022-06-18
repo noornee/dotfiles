@@ -116,8 +116,13 @@ super + {Left,Down,Up,Right}
 ##################################################
 
 # Launch konsole
+#super + Return
+	#konsole
+
+# Launch Alacritty
 super + Return
-	konsole
+	alacritty
+
 
 # Launch dmenu
 super + shift + @space
