@@ -46,4 +46,5 @@ return require('packer').startup(function(use)
 			require('orgmode').setup{}
 		end
 	})
+	use({ 'mattn/emmet-vim' })
 end)

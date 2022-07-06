@@ -14,7 +14,7 @@ local on_attach = function()
   vim.keymap.set('n', '<space>df', vim.diagnostic.goto_next, bufopts)
 end
 
-local servers = { 'gopls', 'sumneko_lua', 'pyright', 'vimls'}
+local servers = { 'gopls', 'sumneko_lua', 'pyright', 'jsonls', 'emmet_ls'}
 for _, lsp in pairs(servers) do
   require('lspconfig')[lsp].setup {
 	capabilities = capabilities,

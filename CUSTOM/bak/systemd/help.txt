@@ -1,0 +1,6 @@
+path -> /etc/systemd/system/wakelock@noornee.service
+trigger i3lock-fancy after 5 minutes of inactivaty
+
+
+turns out i was doing this wrong 
+ref -> https://www.reddit.com/r/systemd/comments/vh9wwa/service_enabled_but_why_do_i_have_to_explicitly/

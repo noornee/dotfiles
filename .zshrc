@@ -20,5 +20,6 @@ alias zshrc="nvim $HOME/.zshrc"
 alias doom="~/.emacs.d/bin/doom"
 alias log="$HOME/syncthing/log.sh"
 alias tmux="tmux -u"
+alias rx="rxfetch"
 
 source $ZSH/oh-my-zsh.sh

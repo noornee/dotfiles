@@ -115,14 +115,9 @@ super + {Left,Down,Up,Right}
 # Custom 
 ##################################################
 
-# Launch konsole
-#super + Return
-	#konsole
-
 # Launch Alacritty
 super + Return
 	alacritty
-
 
 # Launch dmenu
 super + shift + @space
@@ -150,14 +145,23 @@ Print
 
 # Adjust Brightness
 XF86MonBrightnessUp 
-	echo "up" | xargs /home/noornee/.config/CUSTOM/scripts/brightness.sh
-
+	echo "up" | xargs /home/noornee/.local/bin/brightness.sh
 
 XF86MonBrightnessDown
-	echo "down" | xargs /home/noornee/.config/CUSTOM/scripts/brightness.sh
+	echo "down" | xargs /home/noornee/.local/bin/brightness.sh
 
+# Adjust Volume
+XF86AudioRaiseVolume
+	amixer -D default set Master 10+ 
+
+XF86AudioLowerVolume
+	amixer -D default set Master 10- 
+
+XF86AudioMute
+	amixer -D default set Master toggle   
 
 # launch power script
 super + alt + F4
-	/home/noornee/.config/CUSTOM/scripts/power.sh
+	/home/noornee/.local/bin/power.sh
+
 

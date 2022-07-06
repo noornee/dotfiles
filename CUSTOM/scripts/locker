@@ -1,0 +1,13 @@
+#!/usr/bin/bash
+
+#xautolock -detectsleep \
+	#-time 1 \
+	#-locker "i3lock-fancy --font Source-Code-Pro"
+	#-notify 30 \
+	#-notifier "notify-send --urgency=critical --expire-time=5000 'locking screen in 30s seconds'" 
+
+
+echo "starting lockscreen"
+xset s 200 # set screen to sleep in 200 seconds of inactivity
+xss-lock -- /home/noornee/.local/bin/i3lock-fancy --font 'Source-Code-Pro' &
+	
