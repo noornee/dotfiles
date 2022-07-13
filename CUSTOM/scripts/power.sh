@@ -34,12 +34,13 @@ function power_prompt()
 		bool=$(echo -e "No\nYes" | dmenu -i -p "Are you Sure You Want To Reboot ?")
 		if [[ $bool == "Yes" ]];then
 			timer 10 "rebooting"; sleep 10
-			clear_zsh_history; reboot
+			reboot
+			#clear_zsh_history; reboot
 		fi
 	elif [[ $prompt == "Shutdown" ]];then
 		bool=$(echo -e "No\nYes" | dmenu -i -p "Are you Sure You Want To ShutDown ?")
 		if [[ $bool == "Yes" ]];then
-			clear_zsh_history; shutdown -h 
+			shutdown -h 
 			timer 60 "shutting down"
 		fi	
 	fi

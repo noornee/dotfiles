@@ -13,13 +13,11 @@ alias cls="clear"
 alias win="cd /media/win/Users/noornee/Videos"
 alias tv="$HOME/.config/CUSTOM/scripts/mpv.sh" # mpv script for hdmi audio device
 alias update_dotfiles="$HOME/.config/CUSTOM/scripts/update_dotfiles.sh"
-alias sdn="shutdown now | history -c"
-alias toipe="$HOME/custom/typ/toipe" 
-alias goenv="$HOME/Desktop/goenv"
+alias sdn="shutdown now"
 alias zshrc="nvim $HOME/.zshrc"
-alias doom="~/.emacs.d/bin/doom"
-alias log="$HOME/syncthing/log.sh"
 alias tmux="tmux -u"
-alias rx="rxfetch"
+alias dl="cd $HOME/Downloads"
+alias vid="cd $HOME/Downloads/Videos/Shows"
+alias tut="cd $HOME/Downloads/Videos/Tutorials/"
 
 source $ZSH/oh-my-zsh.sh

@@ -120,12 +120,8 @@ super + Return
 	alacritty
 
 # Launch dmenu
-super + shift + @space
-	dmenu_run
-
-# Launch rofi
 super + @space
-	rofi -show drun
+	dmenu_run
 
 # Launch thunar
 super + e
@@ -139,9 +135,9 @@ super + alt + g
 super + alt + i
 	google-chrome-stable --incognito
 
-# screenshot with spectacle
+# screenshot with scrot
 Print 
-	spectacle
+	scrot --select --freeze
 
 # Adjust Brightness
 XF86MonBrightnessUp 
