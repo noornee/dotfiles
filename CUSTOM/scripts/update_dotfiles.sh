@@ -1,7 +1,10 @@
 #!/bin/bash
 
 cd $HOME/.config/
-cp -r CUSTOM bspwm mpv nvim picom polybar sxhkd zathura tmux alacritty $HOME/.zshrc ./dotfiles
+rsync -hav \
+	alacritty bspwm CUSTOM lf mpv nvim picom polybar sxhkd tmux zathura zsh/.zshrc $HOME/.zshenv \
+	$HOME/.config/dotfiles/
+
 
 # send notification
 ret_status=$?

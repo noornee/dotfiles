@@ -1,7 +1,7 @@
 # Font configuration
 font:
   family: monospace
-  size: 8
+  size: 7
 
 colors:
   # Default colors
