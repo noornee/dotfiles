@@ -1,6 +1,5 @@
 export LESSHISTFILE="-"
 export ZDOTDIR="$HOME/.config/zsh"
-export ZSH="$ZDOTDIR/.oh-my-zsh" # Path to oh-my-zsh installation.
 export PATH="$PATH:$HOME/.local/bin/" 
 export PATH="$PATH:$HOME/.local/share/go/bin/" # go path
 export GOPATH="$HOME/.local/share/go"
