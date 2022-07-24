@@ -5,14 +5,18 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-HISTFILE="$HOME/.cache/zsh/zsh_history"
+
+# history
+export HISTFILE="$HOME/.cache/zsh/zsh_history"
 HISTSIZE=50000
 SAVEHIST=10000
 
 
+eval "$(dircolors -b)" # Enable ls colors
 zstyle ':completion:*' menu select # auto/tab complete
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 autoload -Uz compinit && compinit
+
 
 setopt autocd
 setopt interactivecomments # recognize comments
@@ -29,7 +33,7 @@ alias la='ls -lAFh'   #long list,show almost all,show type,human readable
 alias ll='ls -l'      #long list
 alias lsd='ls -d .*'  #list dots
 alias grep='grep --color=auto --exclude-dir=.git'
-alias clh="history -c"
+alias clh="cat /dev/null > $HISTFILE && echo 'history file cleared'"
 alias cls="clear"
 alias tv="$HOME/.config/CUSTOM/scripts/mpv.sh" # mpv script for hdmi audio device
 alias update_dotfiles="$HOME/.config/CUSTOM/scripts/update_dotfiles.sh"
@@ -42,14 +46,15 @@ alias vid="cd $HOME/media/vid/shows"
 alias tut="cd $HOME/media/vid/tutorials/"
 alias goenv="cd $HOME/workspace/goenv/"
 alias codenv="cd $HOME/workspace/codenv/"
+alias zshrc="$EDITOR $ZDOTDIR/.zshrc"
 
 
-#source $ZDOTDIR/lib/history.zsh
-source $ZDOTDIR/lib/theme-and-appearance.zsh
-source $ZDOTDIR/lib/termsupport.zsh
+source $ZDOTDIR/lib/termsupport.zsh # sets terminal window and tab/icon title
 source $ZDOTDIR/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $ZDOTDIR/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source $ZDOTDIR/themes/powerlevel10k/powerlevel10k.zsh-theme
+
+# powerlevel10k theme
+source $ZDOTDIR/themes/powerlevel10k/powerlevel10k.zsh-theme 
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh

@@ -1,6 +1,6 @@
 export LESSHISTFILE="-"
 export ZDOTDIR="$HOME/.config/zsh"
-export PATH="$PATH:$HOME/.local/bin/" 
+export PATH="$PATH:$HOME/.local/bin" 
 export PATH="$PATH:$HOME/.local/share/go/bin/" # go path
 export GOPATH="$HOME/.local/share/go"
 export EDITOR="/usr/bin/nvim"
