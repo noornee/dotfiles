@@ -2,7 +2,7 @@
 
 cd $HOME/.config/
 rsync -hav \
-	alacritty bspwm CUSTOM lf mpv nvim picom polybar sxhkd tmux zathura zsh/.zshrc $HOME/.zshenv \
+	alacritty bspwm CUSTOM lf mpv nvim picom polybar sxhkd tmux zathura zsh $HOME/.zshenv \
 	$HOME/.config/dotfiles/
 
 
