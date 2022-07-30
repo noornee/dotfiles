@@ -203,9 +203,6 @@ setup_fonts
 
 echo "               "
 
-if [ "$os" = Android ]; then
-	echo -e "               ${c5}phone${c3}  $(getprop ro.product.brand) $(getprop ro.product.model)"
-fi
 
 get_hostname() {
 	hostname=$(cat /etc/hostname 2>/dev/null)
@@ -228,6 +225,9 @@ add_dashes(){
 
 echo -e "	       $(get_hostname)"
 echo -e "	       $(add_dashes)"
+if [ "$os" = Android ]; then
+	echo -e "               ${c5}phone${c3}  $(getprop ro.product.brand) $(getprop ro.product.model)"
+fi
 echo -e "               ${c1}os${c3}     $(get_distro_name) $(uname -m)"
 echo -e "               ${c2}ker${c3}    $(uname -r)"
 echo -e "     ${c3}•${c8}_${c3}•${c0}       ${c7}pkgs${c3}   $(get_package_info)"
