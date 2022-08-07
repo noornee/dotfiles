@@ -17,6 +17,9 @@ zstyle ':completion:*' menu select # auto/tab complete
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 autoload -Uz compinit && compinit
 
+bindkey -s '^t' 'tmux\n'
+bindkey -s '^f' 'lfub\n'
+
 
 setopt autocd
 setopt interactivecomments # recognize comments
@@ -33,13 +36,13 @@ alias la='ls -lAFh'   #long list,show almost all,show type,human readable
 alias ll='ls -l'      #long list
 alias lsd='ls -d .*'  #list dots
 alias grep='grep --color=auto --exclude-dir=.git'
-alias clh="cat /dev/null > $HISTFILE && echo 'history file cleared'"
+alias clh="cat /dev/null > $HISTFILE && history -p && echo 'history file cleared'"
 alias cls="clear"
 alias tv="$HOME/.config/CUSTOM/scripts/mpv.sh" # mpv script for hdmi audio device
 alias update_dotfiles="$HOME/.config/CUSTOM/scripts/update_dotfiles.sh"
 alias sdn="shutdown now"
 alias zshrc="nvim $HOME/.zshrc"
-alias tmux="tmux -u"
+#alias tmux="tmux -u"
 alias lf="lfub"
 alias dl="cd $HOME/downloads"
 alias vid="cd $HOME/media/vid/shows"
@@ -47,6 +50,7 @@ alias tut="cd $HOME/media/vid/tutorials/"
 alias goenv="cd $HOME/workspace/goenv/"
 alias codenv="cd $HOME/workspace/codenv/"
 alias zshrc="$EDITOR $ZDOTDIR/.zshrc"
+alias hist="history 0"
 
 
 source $ZDOTDIR/lib/termsupport.zsh # sets terminal window and tab/icon title
