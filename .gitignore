@@ -1,5 +1,5 @@
-mpv/watch_later
-nvim/plugin
-nvim/colors
-tmux/plugins/*
-zsh/.zcompdump
+.config/mpv/watch_later
+.config/nvim/plugin
+.config/nvim/colors
+.config/tmux/plugins/*
+.config/zsh/.zcompdump
