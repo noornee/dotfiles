@@ -44,8 +44,7 @@ alias lf="lfub"
 alias hist="history 0"
 alias update_grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 
-alias tv="$HOME/.config/CUSTOM/scripts/mpv.sh" # mpv script for hdmi audio device
-alias update_dotfiles="$HOME/.config/CUSTOM/scripts/update_dotfiles.sh"
+alias update_dotfiles="$HOME/.local/bin/update_dotfiles.sh"
 alias dl="cd $HOME/downloads"
 alias vid="cd $HOME/media/videos/shows"
 alias doc="cd $HOME/media/documents/"

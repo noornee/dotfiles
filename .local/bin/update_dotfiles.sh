@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cp $HOME/.zshenv $HOME/.config/dotfiles
+rsync $HOME/{.zshenv,.Xresources} $HOME/.config/dotfiles
 
 rsync -hav $HOME/.local/bin/* $HOME/.config/dotfiles/.local/bin/
 
