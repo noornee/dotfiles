@@ -1,3 +1,0 @@
-#ACTION=="add", ATTR{idProduct}=="6025", KERNEL=="3-2", RUN+="/home/noornee/plug.sh"
-#ACTION=="bind", ATTR{idProduct}=="6025", KERNEL=="3-2", RUN+="/home/noornee/plug.sh"
-ACTION=="add", SUBSYSTEM=="usb", ATTR{idProduct}=="6025", KERNEL=="3-2", RUN+="/bin/su noornee -c /home/noornee/unplug.sh"
