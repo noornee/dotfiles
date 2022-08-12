@@ -5,6 +5,14 @@ export PATH="$PATH:$HOME/.local/share/go/bin/" # go path
 export GOPATH="$HOME/.local/share/go"
 export EDITOR="/usr/bin/nvim"
 
+export LESS_TERMCAP_mb=$'\e[1;32m'
+export LESS_TERMCAP_md=$'\e[1;32m'
+export LESS_TERMCAP_me=$'\e[0m'
+export LESS_TERMCAP_se=$'\e[0m'
+export LESS_TERMCAP_so=$'\e[01;44;33m' # highlight
+export LESS_TERMCAP_ue=$'\e[0m'
+export LESS_TERMCAP_us=$'\e[1;4;31m'
+
 export LF_ICONS="di=📁:\
 fi=📃:\
 tw=🤝:\
