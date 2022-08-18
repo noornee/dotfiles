@@ -151,11 +151,11 @@ XF86AudioRaiseVolume
 	echo "up" | xargs /home/noornee/.local/bin/sound.sh > /dev/null
 
 XF86AudioLowerVolume
-	amixer -D default set Master 10- 
+	pactl set-sink-volume 0 -10%
 	#echo "down" | xargs /home/noornee/.local/bin/sound.sh > /dev/null
 
 XF86AudioMute
-	amixer -D default set Master toggle   
+	pactl set-sink-mute 0 toggle
 
 # launch power script
 super + alt + F4
