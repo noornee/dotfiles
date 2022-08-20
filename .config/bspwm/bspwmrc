@@ -10,7 +10,6 @@ $HOME/.fehbg & 					# feh wallpaper
 nm-applet &		 			# NetworkManager
 picom --experimental-backends -b & 		# Compositor
 dunst & 					# Notify Daemon
-$HOME/.local/bin/locker & # lock screen on sleep with i3lock-fancy
 
 # #######################################################################
 # #                           WINDOWS CONFIG                            #
