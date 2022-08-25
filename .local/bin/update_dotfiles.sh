@@ -2,6 +2,7 @@
 
 cp $HOME/{.zshenv,.Xresources} $HOME/.config/dotfiles
 cp $HOME/.local/bin/* $HOME/.config/dotfiles/.local/bin/
+cp $HOME/.local/share/applications/* $HOME/.config/dotfiles/.local/share/applications
 cp $HOME/.local/share/icons/* $HOME/.config/dotfiles/.local/share/icons/
 
 rsync -hav \
