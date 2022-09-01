@@ -1,6 +1,7 @@
 # vim: filetype=conf
 
 ncmpcpp_directory = "~/.config/ncmpcpp"
+lyrics_directory = "~/.cache/ncmpcpp/lyrics/"
 mpd_music_dir = "~/media/music/"
 visualizer_data_source = "/tmp/mpd.fifo"
 visualizer_output_name = "my_fifo"

@@ -223,8 +223,8 @@ add_dashes(){
 	done
 }
 
-echo -e "	       $(get_hostname)"
-echo -e "	       $(add_dashes)"
+echo -e "	       ${c4}$(get_hostname)"
+echo -e "	       ${c3}$(add_dashes)"
 if [ "$os" = Android ]; then
 	echo -e "               ${c5}phone${c3}  $(getprop ro.product.brand) $(getprop ro.product.model)"
 fi
