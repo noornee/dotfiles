@@ -1,0 +1,6 @@
+#!/bin/sh
+
+setxkbmap -option "caps:swapescape" # swaps <capslock> with <esc>
+xrdb "$HOME/.config/x11/xresources"
+exec bspwm
+
