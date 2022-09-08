@@ -158,7 +158,7 @@ XF86AudioMute
 	pactl set-sink-mute 0 toggle
 
 # launch power script
-super + alt + F4
+alt + F4
 	/home/noornee/.local/bin/power.sh
 
 
