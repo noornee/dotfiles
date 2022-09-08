@@ -5,6 +5,10 @@ export PATH="$PATH:$HOME/.local/share/go/bin/" # go path
 export GOPATH="$HOME/.local/share/go"
 export EDITOR="/usr/bin/nvim"
 
+export NPM_CONFIG_PREFIX="$HOME/.local/share/npm/"
+export NPM_CONFIG_CACHE="$HOME/.cache/npm/"
+export PATH="$PATH:$HOME/.local/share/npm/bin/" # npm bin path
+
 # [color codes](https://gist.github.com/JBlond/2fea43a3049b38287e5e9cefc87b2124)
 export LESS_TERMCAP_mb=$'\e[1;32m'
 export LESS_TERMCAP_md=$'\e[1;32m'
