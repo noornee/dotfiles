@@ -36,7 +36,7 @@ return require('packer').startup(function(use)
 	use({ 'tjdevries/colorbuddy.nvim' })
 	use({ 'rcarriga/nvim-notify' })
 	use({ 'romgrk/barbar.nvim' })
-	use({ 'fatih/vim-go' })
+	--use({ 'fatih/vim-go' })
 	use({ 'preservim/nerdcommenter' })
 	use({ 'windwp/nvim-autopairs' })
 	use({ 'iamcco/markdown-preview.nvim' })
@@ -49,7 +49,7 @@ return require('packer').startup(function(use)
 				require("gitsigns").setup()
 			end
 	})
-	use({ 'neovim/nvim-lspconfig', requires = {'williamboman/nvim-lsp-installer'} })
+	use({ 'neovim/nvim-lspconfig', requires = {'williamboman/mason.nvim'} })
 	use({ 'hrsh7th/nvim-cmp',
 			requires = {
 				'hrsh7th/cmp-nvim-lsp',
