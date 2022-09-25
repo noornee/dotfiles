@@ -3,3 +3,4 @@
 .config/nvim/colors
 .config/tmux/plugins/*
 .config/zsh/.zcompdump
+*.cache
