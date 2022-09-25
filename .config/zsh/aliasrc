@@ -1,0 +1,26 @@
+#!/usr/bin/zsh
+
+alias ls='ls --color=auto'
+alias l='ls -lFh'     #size,show type,human readable
+alias la='ls -lAFh'   #long list,show almost all,show type,human readable
+alias ll='ls -l'      #long list
+alias lsd='ls -d .*'  #list dots
+alias grep='grep --color=auto --exclude-dir=.git'
+alias diff="diff --color -u"
+alias clh="cat /dev/null > $HISTFILE && history -p && echo 'history file cleared'"
+alias cls="clear"
+alias sdn="shutdown now"
+alias lf="lfub"
+alias hist="history 0"
+alias update_grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
+
+alias update_dotfiles="$HOME/.local/bin/update_dotfiles.sh"
+alias dl="cd $HOME/downloads"
+alias vid="cd $HOME/media/videos/shows"
+alias pix="cd $HOME/media/pictures/"
+alias doc="cd $HOME/media/documents/"
+alias tut="cd $HOME/media/videos/tutorials/"
+alias goenv="cd $HOME/workspace/goenv/"
+alias codenv="cd $HOME/workspace/codenv/"
+alias zshrc="$EDITOR $ZDOTDIR/.zshrc"
+

@@ -1,12 +1,21 @@
 export LESSHISTFILE="-"
 export ZDOTDIR="$HOME/.config/zsh"
-export PATH="$PATH:$HOME/.local/bin" 
-export PATH="$PATH:$HOME/.local/share/go/bin/" # go path
 export GOPATH="$HOME/.local/share/go"
 export EDITOR="/usr/bin/nvim"
 
-export NPM_CONFIG_PREFIX="$HOME/.local/share/npm/"
+export istore="~/storage/shared/rsync" # mobile phone internal storage path
+export estore="/storage/CD77-05B4/Android/data/com.termux/files/rsync" # mobile phone sdcard path
+
+if [[ -d "$HOME/.local/share/npm/" ]]; then
+	export NPM_CONFIG_PREFIX="$HOME/.local/share/npm/"
+else
+	mkdir -p "$HOME/.local/share/npm/"
+fi
+
 export NPM_CONFIG_CACHE="$HOME/.cache/npm/"
+
+export PATH="$PATH:$HOME/.local/bin" 
+export PATH="$PATH:$HOME/.local/share/go/bin/" # go path
 export PATH="$PATH:$HOME/.local/share/npm/bin/" # npm bin path
 
 # [color codes](https://gist.github.com/JBlond/2fea43a3049b38287e5e9cefc87b2124)
