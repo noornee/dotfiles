@@ -5,6 +5,7 @@ alias l='ls -lFh'     #size,show type,human readable
 alias la='ls -lAFh'   #long list,show almost all,show type,human readable
 alias ll='ls -l'      #long list
 alias lsd='ls -d .*'  #list dots
+alias lsdl='ls -ld .*' #long list dots
 alias grep='grep --color=auto --exclude-dir=.git'
 alias diff="diff --color -u"
 alias clh="cat /dev/null > $HISTFILE && history -p && echo 'history file cleared'"
