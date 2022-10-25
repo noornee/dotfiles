@@ -3,7 +3,7 @@ export ZDOTDIR="$HOME/.config/zsh"
 export GOPATH="$HOME/.local/share/go"
 export EDITOR="/usr/bin/nvim"
 
-export istore="~/storage/shared/rsync" # mobile phone internal storage path
+export istore="~/storage/shared/rsync/download" # mobile phone internal storage path
 export estore="/storage/CD77-05B4/Android/data/com.termux/files/rsync" # mobile phone sdcard path
 
 if [[ -d "$HOME/.local/share/npm/" ]]; then
@@ -13,6 +13,8 @@ else
 fi
 
 export NPM_CONFIG_CACHE="$HOME/.cache/npm/"
+
+export VAGRANT_HOME="$HOME/.virtualbox/vagrant/"
 
 export PATH="$PATH:$HOME/.local/bin" 
 export PATH="$PATH:$HOME/.local/share/go/bin/" # go path

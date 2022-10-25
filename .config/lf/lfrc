@@ -30,12 +30,17 @@ cmd open ${{
     esac
 }}
 
+cmd mkdir $mkdir -p "$(echo $* | tr ' ' '\ ')"
+
 cmd delete ${{
+	clear; tput bold setaf 1
 	set -f
 	printf "$fx\n"
+	tput sgr0; tput bold
 	printf "delete? [y/n]: "
 	read ans
-	[ $ans = "y" ] && rm -rf $fx
+	[ $ans = "y" ] && rm -rf -- $fx
 }}
 
+map <c-n> push :mkdir<space>
 map D delete
