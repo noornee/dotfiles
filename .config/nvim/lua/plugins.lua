@@ -61,20 +61,19 @@ return packer.startup(function(use)
 	use({ "hrsh7th/cmp-path" })
 
 	-- Utility
+	use ({ "ellisonleao/gruvbox.nvim" }) -- theme
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
 	use({ "romgrk/barbar.nvim" })
 	use({ "windwp/nvim-autopairs" })
 	use({ "norcalli/nvim-colorizer.lua" })
-	--use({ "tjdevries/colorbuddy.nvim" })
 	use({ "preservim/nerdtree" })
 	use({ "rcarriga/nvim-notify" })
 	use({ "preservim/nerdcommenter" })
-	use({ "nvim-lualine/lualine.nvim", requires = { "kyazdani42/nvim-web-devicons", opt = true } })
+	use({ "nvim-lualine/lualine.nvim" })
 	use({ "kyazdani42/nvim-web-devicons" })
 	use({ "lewis6991/gitsigns.nvim" })
 	use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install" }) -- Markdown
 	use({ "L3MON4D3/LuaSnip" })
-	use({ 'luisiacc/gruvbox-baby', branch = 'main' })
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
