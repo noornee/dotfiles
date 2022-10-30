@@ -61,11 +61,11 @@ return packer.startup(function(use)
 	use({ "hrsh7th/cmp-path" })
 
 	-- Utility
+	use ({ "ellisonleao/gruvbox.nvim" }) -- theme
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
 	use({ "romgrk/barbar.nvim" })
 	use({ "windwp/nvim-autopairs" })
 	use({ "norcalli/nvim-colorizer.lua" })
-	use({ "tjdevries/colorbuddy.nvim" })
 	use({ "preservim/nerdtree" })
 	use({ "rcarriga/nvim-notify" })
 	use({ "preservim/nerdcommenter" })
