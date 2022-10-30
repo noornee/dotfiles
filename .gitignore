@@ -1,0 +1,6 @@
+.config/mpv/watch_later
+.config/nvim/plugin
+.config/nvim/colors
+.config/tmux/plugins/*
+.config/zsh/.zcompdump
+*.cache

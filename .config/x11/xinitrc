@@ -1,0 +1,8 @@
+#!/bin/sh
+
+setxkbmap -option "caps:swapescape" # swaps <capslock> with <esc>
+xsetroot -cursor_name left_ptr # changes x shaped cursor to left arrow pointer
+
+xrdb "$HOME/.config/x11/xresources"
+exec bspwm
+
