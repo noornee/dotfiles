@@ -3,9 +3,6 @@ export ZDOTDIR="$HOME/.config/zsh"
 export GOPATH="$HOME/.local/share/go"
 export EDITOR="/usr/bin/nvim"
 
-export istore="~/storage/shared/rsync/download" # mobile phone internal storage path
-export estore="/storage/CD77-05B4/Android/data/com.termux/files/rsync" # mobile phone sdcard path
-
 if [[ -d "$HOME/.local/share/npm/" ]]; then
 	export NPM_CONFIG_PREFIX="$HOME/.local/share/npm/"
 else
@@ -14,11 +11,14 @@ fi
 
 export NPM_CONFIG_CACHE="$HOME/.cache/npm/"
 
-export VAGRANT_HOME="$HOME/.virtualbox/vagrant/"
-
 export PATH="$PATH:$HOME/.local/bin" 
 export PATH="$PATH:$HOME/.local/share/go/bin/" # go path
 export PATH="$PATH:$HOME/.local/share/npm/bin/" # npm bin path
+
+
+export rsup="$HOME/storage/shared/rsync/upload/"
+export rsdl="$HOME/storage/shared/rsync/download/"
+export sdct="/storage/CD77-05B4/Android/data/com.termux/files"
 
 # [color codes](https://gist.github.com/JBlond/2fea43a3049b38287e5e9cefc87b2124)
 export LESS_TERMCAP_mb=$'\e[1;32m'
