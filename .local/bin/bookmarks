@@ -1,0 +1,16 @@
+#!/usr/bin/bash
+#
+# A script that appends copied text to a file
+
+bookmark=$(xclip -o)
+
+if [[ $(grep "^$bookmark$" "$BOOKMARK_FILE") ]];then
+	notify-send --urgency critical --expire-time 1000 "BOOKMARK" "bookmark already exist"
+elif [[ $bookmark == '' ]]; then
+	notify-send --urgency critical --expire-time 1000 "BOOKMARK" "bookmark cannot be an empty string"
+else
+	echo "$bookmark" >> "$BOOKMARK_FILE"
+	notify-send "BOOKMARK" "added $bookmark to bookmarks"
+fi
+
+
