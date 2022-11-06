@@ -47,8 +47,8 @@ super + {_,shift + }{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east}
 
 # focus the node for the given path jump
-super + {p,b,comma,period}
-	bspc node -f @{parent,brother,first,second}
+#super + {p,b,comma,period}
+	#bspc node -f @{parent,brother,first,second}
 
 # focus the next/previous window in the current desktop
 super + {_,shift + }c
@@ -141,24 +141,30 @@ Print
 
 # Adjust Brightness
 XF86MonBrightnessUp 
-	echo "up" | xargs /home/noornee/.local/bin/brightness.sh
+	"$HOME/.local/bin/brightness.sh" "up"
 
 XF86MonBrightnessDown
-	echo "down" | xargs /home/noornee/.local/bin/brightness.sh
+	"$HOME/.local/bin/brightness.sh" "down"
 
 # Adjust Volume
 XF86AudioRaiseVolume
-	echo "up" | xargs /home/noornee/.local/bin/sound.sh > /dev/null
+	"$HOME/.local/bin/sound.sh" "up"
 
 XF86AudioLowerVolume
-	pactl set-sink-volume 0 -10%
-	#echo "down" | xargs /home/noornee/.local/bin/sound.sh > /dev/null
+	"$HOME/.local/bin/sound.sh" "down"
 
 XF86AudioMute
 	pactl set-sink-mute 0 toggle
 
 # launch power script
 alt + F4
-	/home/noornee/.local/bin/power.sh
+	$HOME/.local/bin/power.sh
 
+# save bookmark
+super + b
+	"$HOME/.local/bin/bookmarks"
+
+# launch saved bookmarks and type selected one
+super + shift + {b,@space}
+	xdotool type $(cat "$BOOKMARK_FILE" | dmenu -i -l 50 | cut -d " " -f1)
 
