@@ -19,6 +19,8 @@ fi
 export istore="~/storage/shared/rsync/download" # mobile phone internal storage path
 export estore="/storage/CD77-05B4/Android/data/com.termux/files/rsync" # mobile phone sdcard path
 
+export BOOKMARK_FILE="$HOME/.local/share/bookmarks.txt"
+
 # [color codes](https://gist.github.com/JBlond/2fea43a3049b38287e5e9cefc87b2124)
 export LESS_TERMCAP_mb=$'\e[1;32m'
 export LESS_TERMCAP_md=$'\e[1;32m'
