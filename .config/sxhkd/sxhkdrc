@@ -123,17 +123,17 @@ super + Return
 super + @space
 	dmenu_run
 
-# Launch thunar
+# Launch emote
 super + e
-	Thunar
+	emote	
 
-# Launch Google Chrome
-super + alt + g
-	google-chrome-stable
+# Launch Firefox
+super + alt + f
+	firefox
 
-# Launch Google Chorme incognito -- iykwim ;)
-super + alt + i
-	google-chrome-stable --incognito
+# Launch firefox icognito mode -- iykwim ;)
+super + alt + p
+	firefox --private-window
 
 # screenshot with scrot
 Print 

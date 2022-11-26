@@ -3,4 +3,6 @@
 .config/nvim/colors
 .config/tmux/plugins/*
 .config/zsh/.zcompdump
+.local/share/
+.local/tmux/plugins/tmux-power
 *.cache
