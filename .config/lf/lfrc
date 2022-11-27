@@ -1,0 +1,46 @@
+# Note on Image Previews
+# check luke smith's voidrice repo for help setting it up
+
+# Basic vars
+set shellopts '-eu'
+set ifs "\n"
+set scrolloff 10
+set icons
+set period 1
+set cleaner '~/.config/lf/cleaner'
+#set previewer '~/.config/lf/scope'
+set hidden
+
+# cmds/functions
+cmd open ${{
+    case $(file --mime-type "$(readlink -f $f)" -b) in
+		text/*|application/json|inode/x-empty) $EDITOR $fx ;;
+		image/svg+xml) display -- $f ;;
+		image/*) rotdir $f | grep -i "\.\(png\|jpg\|jpeg\|gif\|webp\|tif\|ico\)\(_large\)*$" |
+			setsid -f sxiv -aio 2>/dev/null | while read -r file; do
+				[ -z "$file" ] && continue
+				lf -remote "send select \"$file\""
+				lf -remote "send toggle"
+			done &
+			;;
+		audio/*) mpv --audio-display=no $f ;;
+		video/*) setsid -f mpv $f -quiet >/dev/null 2>&1 ;;
+		application/pdf|application/vnd*|application/epub*) setsid -f zathura $fx >/dev/null 2>&1 ;;
+		*) for f in $fx; do setsid $OPENER $f > /dev/null 2> /dev/null & done ;;
+    esac
+}}
+
+cmd mkdir $mkdir -p "$(echo $* | tr ' ' '\ ')"
+
+cmd delete ${{
+	clear; tput bold setaf 1
+	set -f
+	printf "$fx\n"
+	tput sgr0; tput bold
+	printf "delete? [y/n]: "
+	read ans
+	[ $ans = "y" ] && rm -rf -- $fx
+}}
+
+map <c-n> push :mkdir<space>
+map D delete
