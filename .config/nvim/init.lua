@@ -1,3 +1,15 @@
+--require('settings')
+--require('plugins')
+--require('user.lsp')
+--require('mappings')
+--require('user.nvim-notify')
+--require('user.nvim-treesitter')
+--require('user.gruvbox') -- theme
+--require('user.nvim-autopairs')
+--require('user.nvim-colorizer')
+--require('user.lualine')
+--require('user.nvim-cmp')
+--require('user.gitsigns')
 require('user.gruvbox') -- theme
 require('settings')
 require('plugins')

@@ -3,11 +3,23 @@ export ZDOTDIR="$HOME/.config/zsh"
 export GOPATH="$HOME/.local/share/go"
 export EDITOR="/usr/bin/nvim"
 
+
+# this checks if there's an ssh connection and then executes tmux
+if [[ -n "${SSH_CONNECTION}" ]]; then
+	exec tmux
+fi
+
+
 if [[ -d "$HOME/.local/share/npm/" ]]; then
 	export NPM_CONFIG_PREFIX="$HOME/.local/share/npm/"
 else
 	mkdir -p "$HOME/.local/share/npm/"
 fi
+
+if [[ ! -d "$HOME/.cache/zsh" ]]; then
+	mkdir -p "$HOME/.cache/zsh"
+fi
+
 
 export NPM_CONFIG_CACHE="$HOME/.cache/npm/"
 
