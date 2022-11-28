@@ -4,8 +4,8 @@ export GOPATH="$HOME/.local/share/go"
 export EDITOR="/usr/bin/nvim"
 
 
-# this checks if there's an ssh connection and then executes tmux
-if [[ -n "${SSH_CONNECTION}" ]]; then
+# this checks if there's an ssh tty variable and then executes tmux
+if [[ -n "${SSH_TTY}" ]]; then
 	exec tmux
 fi
 

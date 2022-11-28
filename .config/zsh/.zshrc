@@ -36,7 +36,6 @@ alias grep='grep --color=auto --exclude-dir=.git'
 alias diff="diff --color -u"
 alias clh="cat /dev/null > $HISTFILE && history -p && echo 'history file cleared'"
 alias cls="clear"
-alias lf="lfub"
 alias hist="history 0"
 alias zshrc="$EDITOR $ZDOTDIR/.zshrc"
 alias sd="cd ~/storage/shared/"
@@ -48,6 +47,8 @@ alias tv="cd $HOME/storage/shared/Telegram/Telegram\ Video/"
 alias tf="cd $HOME/storage/shared/Telegram/Telegram\ Files/"
 
 alias twu="termux-wake-unlock"
+alias twl="termux-wake-lock"
+alias share="termux-share -a send"
 alias ..="cd .."
 alias dbstart="pg_ctl -D /data/data/com.termux/files/usr/var/lib/postgres start"
 
