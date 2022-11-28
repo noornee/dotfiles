@@ -23,7 +23,7 @@ cmd open ${{
 				lf -remote "send toggle"
 			done &
 			;;
-		audio/*) mpv --audio-display=no $f ;;
+		audio/* | application/octet-stream) mpv --audio-display=no $f ;; # using application/octet-stream for my audios because the ones i have on my machine mime-types isnt right so it defaulted to octet-stream
 		video/*) setsid -f mpv $f -quiet >/dev/null 2>&1 ;;
 		application/pdf|application/vnd*|application/epub*) setsid -f zathura $fx >/dev/null 2>&1 ;;
 		*) for f in $fx; do setsid $OPENER $f > /dev/null 2> /dev/null & done ;;
@@ -42,5 +42,17 @@ cmd delete ${{
 	[ $ans = "y" ] && rm -rf -- $fx
 }}
 
+# set wallpaper with feh
+# make sure the filename of the image you wannna set does not have a semi-colon
+cmd set_wallpaper ${{
+	case $(file --mime-type $f | cut -d ':' -f2 | xargs) in
+		image/*) feh --bg-fill "$f" ;;
+		*) notify-send --urgency=critical --expire-time=5000 "ERROR: invalid file type/format" "\n<b>hint:</b> remove semi-colon \":\" from filename if its a valid image" ;;
+	esac
+}}
+
+
+# mappings
 map <c-n> push :mkdir<space>
 map D delete
+map W set_wallpaper 
