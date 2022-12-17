@@ -115,25 +115,14 @@ super + {Left,Down,Up,Right}
 # Custom 
 ##################################################
 
-# Launch Alacritty
 super + Return
 	alacritty
 
-# Launch dmenu
 super + @space
 	dmenu_run
 
-# Launch emote
 super + e
 	emote	
-
-# Launch Firefox
-super + alt + f
-	firefox
-
-# Launch firefox icognito mode -- iykwim ;)
-super + alt + p
-	firefox --private-window
 
 # screenshot with scrot
 Print 
@@ -167,4 +156,3 @@ super + b
 # launch saved bookmarks and type selected one
 super + shift + {b,@space}
 	xdotool type $(cat "$BOOKMARK_FILE" | dmenu -i -l 50 | cut -d " " -f1)
-

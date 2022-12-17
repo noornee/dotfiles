@@ -17,6 +17,7 @@ autoload -Uz compinit && compinit
 
 bindkey -s '^t' 'tmux\n'
 bindkey -s '^f' 'lfub\n'
+#bindkey -s '^M' 'lfcd.sh'
 
 setopt autocd
 setopt interactivecomments # recognize comments
