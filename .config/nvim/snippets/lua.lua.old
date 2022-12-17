@@ -1,0 +1,64 @@
+local ls = require("luasnip") --{{{
+local s = ls.s
+local i = ls.i
+local t = ls.t
+
+local d = ls.dynamic_node
+local c = ls.choice_node
+local f = ls.function_node
+local sn = ls.snippet_node
+
+local fmt = require("luasnip.extras.fmt").fmt
+local rep = require("luasnip.extras").rep
+
+local snippets, autosnippets = {}, {} --}}}
+
+local group = vim.api.nvim_create_augroup("Lua Snippets", { clear = true })
+local file_pattern = "*.lua"
+
+local myFsnip = s("myFsnip", { t("-- Hi this is my first snippet in lua snip") })
+table.insert(snippets, myFsnip)
+
+local mySnip = s("exp", {
+	t("-- Hello"),
+	i(1, " <placeholder_text>"),
+	t(" this is another node"),
+})
+
+table.insert(snippets, mySnip)
+
+local thirdSnip = s(
+	"third",
+	fmt(
+		[[
+local {} = function({})
+	{}
+end
+]],
+		{
+			i(1, "myVar"),
+			i(2, "myArg"),
+			i(3, "-- TODO: something"),
+		}
+	)
+)
+
+table.insert(snippets, thirdSnip)
+
+local firstAuto = s("auto", { t("-- this was auto triggered") })
+table.insert(snippets, firstAuto)
+
+local secondAuto = s("hello", { t("-- -- this was alto triggered") })
+table.insert(autosnippets, secondAuto)
+
+local thirdAuto = s({ trig = "main%d", regTrig = true }, { t("-- this was third triggered") })
+table.insert(autosnippets, thirdAuto)
+
+local fourthAuto = s({ trig = "four%d", regTrig = true }, {
+	f(function()
+		return "my string"
+	end),
+})
+table.insert(autosnippets, fourthAuto)
+
+return snippets, autosnippets

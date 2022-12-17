@@ -46,7 +46,6 @@ packer.init({
 --
 
 return packer.startup(function(use)
-
 	-- Plugin Manager
 	use({ "wbthomason/packer.nvim" })
 
@@ -61,7 +60,7 @@ return packer.startup(function(use)
 	use({ "hrsh7th/cmp-path" })
 
 	-- Utility
-	use ({ "ellisonleao/gruvbox.nvim" }) -- theme
+	use({ "ellisonleao/gruvbox.nvim" }) -- theme
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
 	use({ "romgrk/barbar.nvim" })
 	use({ "windwp/nvim-autopairs" })
@@ -73,7 +72,8 @@ return packer.startup(function(use)
 	use({ "kyazdani42/nvim-web-devicons" })
 	use({ "lewis6991/gitsigns.nvim" })
 	use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install" }) -- Markdown
-	use({ "L3MON4D3/LuaSnip" })
+	use({ "L3MON4D3/LuaSnip", requires = { "saadparwaiz1/cmp_luasnip" } })
+	use({ "nvim-telescope/telescope.nvim" })
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
