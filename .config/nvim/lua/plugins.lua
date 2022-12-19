@@ -52,6 +52,7 @@ return packer.startup(function(use)
 	-- LSP
 	use({ "neovim/nvim-lspconfig", requires = { "williamboman/mason.nvim" } })
 	use({ "jose-elias-alvarez/null-ls.nvim", requires = { "nvim-lua/plenary.nvim" } })
+	use({ "ray-x/lsp_signature.nvim" })
 
 	-- Completion
 	use({ "hrsh7th/nvim-cmp" })
