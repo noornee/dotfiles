@@ -13,8 +13,8 @@ map("n", "<A-c>", ":BufferClose<CR>", opts)
 -- Magic buffer-picking mode
 map("n", "<C-p>", ":BufferPick<CR>", opts)
 
--- Toggle Nerd Tree
-map("n", "<C-t>", ":NERDTreeToggle<CR>", opts)
+-- Toggle Nvim Tree
+map("n", "<C-t>", ":NvimTreeToggle<CR>", opts)
 
 local modes = { "n", "v" }
 for i in pairs(modes) do
@@ -32,3 +32,22 @@ map(
 
 map("v", "J", ":m '>+1<CR>gv=gv", opts)
 map("v", "K", ":m '<-2<CR>gv=gv", opts)
+
+--toggle FTerm
+map("n", "<F2>", ':lua require("FTerm").toggle()<CR>', opts)
+map("t", "<F2>", '<C-\\><C-n>:lua require("FTerm").toggle()<CR>', opts)
+
+--map("n", "<A-x>", ":!chmod +x %<CR>", opts)
+
+--function file_exists(name)
+--local f = io.open(name, "r")
+--if f ~= nil then
+--io.close(f)
+--print(f)
+--return true
+--else
+--return false
+--end
+--end
+
+--map("n", "<A-x>", ":lua file_exists(%)", opts)
