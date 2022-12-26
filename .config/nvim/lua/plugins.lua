@@ -11,6 +11,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
 		"https://github.com/wbthomason/packer.nvim",
 		install_path,
 	})
+	vim.cmd([[packadd packer.nvim]])
 	print("Installing packer.nvim\nplease close and reopen Neovim after its done")
 end
 
@@ -66,7 +67,7 @@ return packer.startup(function(use)
 	use({ "romgrk/barbar.nvim" })
 	use({ "windwp/nvim-autopairs" })
 	use({ "norcalli/nvim-colorizer.lua" })
-	use({ "preservim/nerdtree" })
+	use({ "nvim-tree/nvim-tree.lua" })
 	use({ "rcarriga/nvim-notify" })
 	use({ "preservim/nerdcommenter" })
 	use({ "nvim-lualine/lualine.nvim" })
@@ -75,6 +76,8 @@ return packer.startup(function(use)
 	use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install" }) -- Markdown
 	use({ "L3MON4D3/LuaSnip", requires = { "saadparwaiz1/cmp_luasnip" } })
 	use({ "nvim-telescope/telescope.nvim" })
+	use({ "numToStr/FTerm.nvim" })
+	use({ "numToStr/Comment.nvim" })
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
