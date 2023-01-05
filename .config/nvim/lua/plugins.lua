@@ -60,6 +60,8 @@ return packer.startup(function(use)
 	use({ "hrsh7th/cmp-nvim-lsp" })
 	use({ "hrsh7th/cmp-buffer" })
 	use({ "hrsh7th/cmp-path" })
+	use({ "hrsh7th/cmp-nvim-lua" })
+	use({ "saadparwaiz1/cmp_luasnip" })
 
 	-- Utility
 	use({ "ellisonleao/gruvbox.nvim" }) -- theme
@@ -73,11 +75,12 @@ return packer.startup(function(use)
 	use({ "nvim-lualine/lualine.nvim" })
 	use({ "kyazdani42/nvim-web-devicons" })
 	use({ "lewis6991/gitsigns.nvim" })
-	use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install" }) -- Markdown
-	use({ "L3MON4D3/LuaSnip", requires = { "saadparwaiz1/cmp_luasnip" } })
+	-- use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install" }) -- Markdown
+	use({ "L3MON4D3/LuaSnip" })
 	use({ "nvim-telescope/telescope.nvim" })
 	use({ "numToStr/FTerm.nvim" })
 	use({ "numToStr/Comment.nvim" })
+	use({ "toppair/peek.nvim", run = "deno task --quiet build:fast" })
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
