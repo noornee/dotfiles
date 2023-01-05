@@ -6,7 +6,6 @@ require("user.fterm")
 require("user.gitsigns")
 require("user.gruvbox") -- theme
 require("user.lsp")
-require("user.peek")
 require("user.lualine")
 require("user.luasnip")
 require("user.nvim-autopairs")

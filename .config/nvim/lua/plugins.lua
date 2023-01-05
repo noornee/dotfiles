@@ -76,12 +76,11 @@ return packer.startup(function(use)
 	use({ "nvim-lualine/lualine.nvim" })
 	use({ "kyazdani42/nvim-web-devicons" })
 	use({ "lewis6991/gitsigns.nvim" })
-	-- use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install" }) -- Markdown
+	use({ "iamcco/markdown-preview.nvim", run = "cd app && yarn install" }) -- Markdown
 	use({ "L3MON4D3/LuaSnip" })
 	use({ "nvim-telescope/telescope.nvim" })
 	use({ "numToStr/FTerm.nvim" })
 	use({ "numToStr/Comment.nvim" })
-	use({ "toppair/peek.nvim", run = "deno task --quiet build:fast" })
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
