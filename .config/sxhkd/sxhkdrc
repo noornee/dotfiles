@@ -126,7 +126,7 @@ super + e
 
 # screenshot with scrot
 Print 
-	scrot --select --freeze
+	scrot --select --freeze -e 'notify-send -i /home/noornee/$f "scrot" $f'
 
 # Adjust Brightness
 XF86MonBrightnessUp 
