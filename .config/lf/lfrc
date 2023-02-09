@@ -24,7 +24,7 @@ cmd open ${{
 			done &
 			;;
 		audio/* | application/octet-stream) mpv --audio-display=no $f ;; # using application/octet-stream for my audios because the ones i have on my machine mime-types isnt right so it defaulted to octet-stream
-		video/*) setsid -f mpv $f -quiet >/dev/null 2>&1 ;;
+		video/*) setsid -f mpv $fx -quiet >/dev/null 2>&1 ;;
 		application/pdf|application/vnd*|application/epub*) setsid -f zathura $fx >/dev/null 2>&1 ;;
 		*) for f in $fx; do setsid $OPENER $f > /dev/null 2> /dev/null & done ;;
     esac
