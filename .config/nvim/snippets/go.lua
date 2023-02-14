@@ -12,16 +12,27 @@ local main_function = s(
 		[[
 		package main
 
-		import "fmt"
-
 		func main() {{
-			fmt.Println({})
+			{}
 		}}
 		]],
-		{ i(1, '"Hello World"') }
+		{ i(1, "") }
+	)
+)
+
+local check_err = s(
+	{ trig = "cerr" },
+	fmt(
+		[[
+		if err != nil {{
+			log.Println({})
+		}}
+		]],
+		{ i(1, "err") }
 	)
 )
 
 table.insert(autosnippets, main_function)
+table.insert(autosnippets, check_err)
 
 return snippets, autosnippets
