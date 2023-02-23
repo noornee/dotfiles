@@ -25,3 +25,4 @@ alias goenv="cd $HOME/workspace/goenv/"
 alias codenv="cd $HOME/workspace/codenv/"
 alias zshrc="$EDITOR $ZDOTDIR/.zshrc"
 
+alias nvc="cd $HOME/.config/nvim && nvim init.lua" # neovim config

@@ -3,7 +3,7 @@
 function send_notification()
 {
 	vol_level=$(pactl get-sink-volume 0 | awk '{print $5}')
-	dunstify -i /home/noornee/.local/share/icons/volume.png -u low -r 9478 -t 1000 -h int:value:$vol_level "volume: $vol_level%"
+	dunstify -i "$HOME/.local/share/icons/volume.png" -u low -r 9478 -t 1000 -h int:value:$vol_level "volume: $vol_level"
 }
 
 case $1 in
@@ -15,4 +15,3 @@ case $1 in
 		pactl set-sink-volume 0 -10%
 		send_notification $1;;
 esac
-

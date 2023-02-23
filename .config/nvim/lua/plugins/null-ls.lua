@@ -1,7 +1,6 @@
 local M = {
 	"jose-elias-alvarez/null-ls.nvim",
 	event = "BufReadPre",
-
 	-- dependencies = {
 	-- 	"nvim-lua/plenary.nvim",
 	-- },
@@ -26,7 +25,7 @@ M.config = function()
 	local fmtGroup = vim.api.nvim_create_augroup("FormatOnSave", { clear = true })
 	vim.api.nvim_create_autocmd("BufWritePre", {
 		group = fmtGroup,
-		pattern = { "*.lua", "*.go", "*.html" },
+		-- pattern = { "*.lua", "*.go", "*.html" },
 		command = "lua vim.lsp.buf.format({ async = false })",
 	})
 end

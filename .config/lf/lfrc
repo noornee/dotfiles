@@ -31,6 +31,7 @@ cmd open ${{
 }}
 
 cmd mkdir $mkdir -p "$(echo $* | tr ' ' '\ ')"
+cmd touch $touch "$(echo $* | tr ' ' '\ ')"
 
 cmd delete ${{
 	clear; tput bold setaf 1
@@ -54,5 +55,6 @@ cmd set_wallpaper ${{
 
 # mappings
 map <c-n> push :mkdir<space>
+map <c-t> push :touch<space>
 map D delete
 map W set_wallpaper 

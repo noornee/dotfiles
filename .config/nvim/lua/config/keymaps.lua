@@ -11,6 +11,7 @@ map("n", "<A->>", " :BufferMoveNext<CR>", opts)
 map("n", "<A-c>", ":BufferClose<CR>", opts) -- Close buffer
 
 map("n", "<C-t>", ":NvimTreeToggle<CR>", opts) -- Toggle Nvim Tree
+map("n", "<F3>", ":NvimTreeToggle<CR>", opts)
 
 -- Telescope
 --map("n", "<leader>f", ":Telescope find_files<CR>", opts)

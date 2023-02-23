@@ -1,6 +1,5 @@
 local M = {
 	"neovim/nvim-lspconfig",
-
 	dependencies = {
 
 		{ "hrsh7th/nvim-cmp" },
@@ -46,7 +45,7 @@ M.config = function()
 		vim.keymap.set("n", "<space>df", vim.diagnostic.goto_next, bufopts)
 	end
 
-	local servers = { "gopls", "lua_ls", "pyright", "html", "tsserver" }
+	local servers = { "gopls", "lua_ls", "pyright", "html", "tsserver", "rust_analyzer" }
 	for _, lsp in pairs(servers) do
 		lspconfig[lsp].setup({
 			capabilities = capabilities,
