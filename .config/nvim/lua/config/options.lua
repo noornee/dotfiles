@@ -12,3 +12,5 @@ set.hlsearch = false
 set.incsearch = true
 set.cursorline = true
 set.termguicolors = true
+
+vim.cmd([[let g:netrw_fastbrowse = 0]]) -- this closes netrw after opening a file. [`nvim .` in the current dir]

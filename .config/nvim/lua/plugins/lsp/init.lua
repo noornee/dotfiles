@@ -5,8 +5,10 @@ local M = {}
 for _, v in ipairs(plugins) do
 	local status_ok, plug = pcall(require, "plugins.lsp." .. v)
 	if not status_ok then
-		local pattern = "plugins.lsp.%a+"
-		local module = string.match(plug, pattern) -- match the module name
+		local pattern = "plugins.lsp.%g+"
+		local match = string.match(plug, pattern) -- match the module name
+		local module = string.gsub(match, "'", "") -- remove single quote ' from the end of the matched pattern
+
 		vim.notify(
 			"failed to load "
 				.. module
@@ -17,6 +19,7 @@ for _, v in ipairs(plugins) do
 				timeout = 5000,
 			}
 		)
+
 		return
 	end
 	table.insert(M, plug)
