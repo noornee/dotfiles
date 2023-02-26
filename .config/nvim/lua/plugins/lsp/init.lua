@@ -1,69 +1,25 @@
-local M = {
-	"neovim/nvim-lspconfig",
-	dependencies = {
+local plugins = { "nvim-lspconfig", "lsp_signature", "lsp_lines" }
 
-		{ "hrsh7th/nvim-cmp" },
-		{ "williamboman/mason.nvim", config = true },
-		{ "hrsh7th/cmp-nvim-lsp" },
+local M = {}
 
-		--
-		-- lsp signature
-		{
-			"ray-x/lsp_signature.nvim",
-			config = function()
-				local lsp_signature = require("lsp_signature")
-				lsp_signature.setup({
-					hint_enable = false, -- virtual hint enable
-					hint_prefix = "💡", -- Bulb for parameter, NOTE: for the terminal not support emoji, might crash
-					handler_opts = {
-						border = "none", -- double, rounded, single, shadow, none, or a table of borders
-					},
-				})
-			end,
-		},
-		--
-		--
-	},
-}
-
-M.config = function()
-	local lspconfig = require("lspconfig")
-	local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
-	capabilities.textDocument.completion.completionItem.snippetSupport = true
-
-	local on_attach = function()
-		local bufopts = { noremap = true, silent = true, buffer = 0 }
-		vim.keymap.set("n", "gD", vim.lsp.buf.declaration, bufopts)
-		vim.keymap.set("n", "gd", vim.lsp.buf.definition, bufopts)
-		vim.keymap.set("n", "K", vim.lsp.buf.hover, bufopts)
-		vim.keymap.set("n", "gi", vim.lsp.buf.implementation, bufopts)
-		vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename, bufopts)
-		vim.keymap.set("n", "gr", vim.lsp.buf.references, bufopts)
-		vim.keymap.set("n", "<space>f", function()
-			vim.lsp.buf.format({ async = true })
-		end, bufopts)
-		vim.keymap.set("n", "<space>df", vim.diagnostic.goto_next, bufopts)
+for _, v in ipairs(plugins) do
+	local status_ok, plug = pcall(require, "plugins.lsp." .. v)
+	if not status_ok then
+		local pattern = "plugins.lsp.%a+"
+		local module = string.match(plug, pattern) -- match the module name
+		vim.notify(
+			"failed to load "
+				.. module
+				.. "\n\nmodule does not exist\n\ncheck if it exists in the `nvim/lua/plugins/lsp` directory\n",
+			"error",
+			{
+				title = "CUSTOM LSP ERROR",
+				timeout = 5000,
+			}
+		)
+		return
 	end
-
-	local servers = { "gopls", "lua_ls", "pyright", "html", "tsserver", "rust_analyzer" }
-	for _, lsp in pairs(servers) do
-		lspconfig[lsp].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-			settings = {
-				Lua = {
-					diagnostics = {
-						globals = { "vim" },
-					},
-				},
-			},
-		})
-	end
-
-	--https://github.com/aca/emmet-ls
-	lspconfig.emmet_ls.setup({
-		filetypes = { "html", "css", "template", "javascript" },
-	})
+	table.insert(M, plug)
 end
 
 return M
