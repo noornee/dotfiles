@@ -1,10 +1,9 @@
 local M = {
-	"ray-x/lsp_signature.nvim"
+	"ray-x/lsp_signature.nvim",
 }
 
 M.config = function()
-	local status_ok, lsp_signature = pcall(require, "lsp_signature")
-	if not status_ok then return end
+	local lsp_signature = require("lsp_signature")
 
 	lsp_signature.setup({
 		hint_enable = false, -- virtual hint enable
@@ -13,7 +12,6 @@ M.config = function()
 			border = "none", -- double, rounded, single, shadow, none, or a table of borders
 		},
 	})
-
 end
 
 return M
