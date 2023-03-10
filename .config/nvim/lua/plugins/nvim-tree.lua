@@ -1,7 +1,10 @@
 local M = {
 	"nvim-tree/nvim-tree.lua",
-	event = "BufReadPre",
-	-- config = true,
+	keys = {
+
+		{ "<C-t>", "<cmd>NvimTreeToggle<CR>", desc = "toggle NvimTree" },
+		{ "<F3>", "<cmd>NvimTreeToggle<CR>", desc = "toggle NvimTree" },
+	},
 }
 
 M.config = function()

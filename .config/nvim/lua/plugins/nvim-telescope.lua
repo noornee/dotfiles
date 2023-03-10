@@ -4,6 +4,12 @@ local M = {
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 	},
+	keys = {
+		{
+			"<space>ff",
+			"<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<CR>",
+		},
+	},
 }
 
 M.config = function()

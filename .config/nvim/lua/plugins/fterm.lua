@@ -1,6 +1,9 @@
 local M = {
 	"numToStr/FTerm.nvim",
-	lazy = true,
+	keys = {
+		{ "<F2>", "<cmd>lua require('FTerm').toggle()<CR>" },
+		{ "<F2>", "<C-\\><C-n><cmd>lua require('FTerm').toggle()<CR>", mode = "t" },
+	},
 }
 
 M.config = function()
