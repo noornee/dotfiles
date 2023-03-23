@@ -1,6 +1,5 @@
 .config/mpv/watch_later
-.config/nvim/plugin
-.config/nvim/colors
+.config/nvim/lazy-lock.json
 .config/tmux/plugins/*
 .config/zsh/.zcompdump
 .local/share/

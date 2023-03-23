@@ -1,7 +1,8 @@
 export LESSHISTFILE="-"
 export ZDOTDIR="$HOME/.config/zsh"
 export GOPATH="$HOME/.local/share/go"
-export EDITOR="/usr/bin/nvim"
+# export EDITOR="/usr/bin/nvim"
+export EDITOR="$HOME/.local/neovim/build/bin/nvim" # neovim release build
 
 export VAGRANT_HOME="$HOME/.virtualbox/vagrant/"
 
@@ -21,13 +22,13 @@ if [[ ! -d "$HOME/.cache/zsh" ]];then
 	mkdir -p "$HOME/.cache/zsh"
 fi
 
-# deletes Desktop and Downloads because i dont use them. these directory automatically creat anytime i open slack :/
-#dir=("Desktop" "Downloads")
-#for i in "${dir[@]}";do
-	#if [[ -d "$HOME/$i" ]];then
-		#rmdir "$HOME/$i"
-	#fi
-#done
+# deletes Desktop and Downloads because i dont use them. these directory automatically create anytime i open slack or firefox :/
+dir=("Desktop" "Downloads")
+for i in "${dir[@]}";do
+	if [[ -d "$HOME/$i" ]];then
+		rmdir "$HOME/$i"
+	fi
+done
 
 export istore="~/storage/shared/rsync/download" # mobile phone internal storage path
 export estore="/storage/CD77-05B4/Android/data/com.termux/files/rsync" # mobile phone sdcard path

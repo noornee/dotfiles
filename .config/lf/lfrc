@@ -32,6 +32,8 @@ cmd open ${{
 
 cmd mkdir $mkdir -p "$(echo $* | tr ' ' '\ ')"
 cmd touch $touch "$(echo $* | tr ' ' '\ ')"
+cmd fzf $nvim $(find . -name "$1" | fzf)
+# cmd fzf $nvim $(find . -name "$1" -type f| fzf)
 
 cmd delete ${{
 	clear; tput bold setaf 1
@@ -58,3 +60,6 @@ map <c-n> push :mkdir<space>
 map <c-t> push :touch<space>
 map D delete
 map W set_wallpaper 
+map F push :fzf<space>
+
+
