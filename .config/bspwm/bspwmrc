@@ -5,11 +5,11 @@
 # #######################################################################
 
 pgrep -x sxhkd > /dev/null || sxhkd & 		# Keybindings
-$HOME/.config/polybar/launch.sh & 		# Polybar
-$HOME/.fehbg & 					# feh wallpaper
-nm-applet &		 			# NetworkManager
-picom --experimental-backends -b & 		# Compositor
-dunst & 					# Notify Daemon
+$HOME/.config/polybar/launch.sh & 			# Polybar
+$HOME/.fehbg & 								# feh wallpaper
+nm-applet &		 							# NetworkManager
+picom -b									# Compositor
+dunst & 									# Notify Daemon
 
 # #######################################################################
 # #                           WINDOWS CONFIG                            #
@@ -36,6 +36,5 @@ bspc config gapless_monocle      true
 # #######################################################################
 
 bspc rule -a Zathura state=tiled
-#bspc rule -a Emacs state=tiled
-#bspc rule -a Thunar desktop='^6'
+bspc rule -a Thunar desktop='^6'
 

@@ -1,15 +1,13 @@
 # Font configuration
-#font:
-  #family: monospace
-  #size: 7
-
 font:
   normal:
     family: Iosevka
-    #family: Fira Code
     style: Regular
-  #size: 7
-  size: 8
+  # italic:
+  #   family: Iosevka Term
+  #   style: Italic
+
+  size: 9
 
 colors:
   # Default colors

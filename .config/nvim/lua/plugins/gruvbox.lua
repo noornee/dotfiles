@@ -10,7 +10,12 @@ M.config = function()
 		undercurl = true,
 		underline = true,
 		bold = true,
-		italic = false,
+		italic = {
+			strings = false,
+			operators = false,
+			comments = true,
+			folds = true,
+		},
 		strikethrough = true,
 		invert_selection = false,
 		invert_signs = false,

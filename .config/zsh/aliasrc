@@ -1,7 +1,7 @@
 #!/usr/bin/zsh
 
 
-alias nvim="$HOME/.local/neovim/build/bin/nvim"
+#alias nvim="$HOME/.local/neovim/build/bin/nvim"
 #
 alias ls='ls --color=auto'
 alias l='ls -lFh'     #size,show type,human readable

@@ -28,6 +28,7 @@ setopt hist_ignore_dups
 
 # source
 source "$ZDOTDIR/aliasrc" # alias
+source "$HOME/.cache/zsh/secretrc" # secret alias
 source $ZDOTDIR/lib/termsupport.zsh # sets terminal window and tab/icon title
 source $ZDOTDIR/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $ZDOTDIR/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

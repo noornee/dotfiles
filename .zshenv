@@ -1,10 +1,11 @@
 export LESSHISTFILE="-"
 export ZDOTDIR="$HOME/.config/zsh"
 export GOPATH="$HOME/.local/share/go"
-# export EDITOR="/usr/bin/nvim"
-export EDITOR="$HOME/.local/neovim/build/bin/nvim" # neovim release build
+export EDITOR="/usr/bin/nvim"
 
 export VAGRANT_HOME="$HOME/.virtualbox/vagrant/"
+export CARGO_HOME="$HOME/.local/share/cargo"
+export RUSTUP_HOME="$HOME/.local/share/rustup"
 
 export PATH="$PATH:$HOME/.local/bin" 
 export PATH="$PATH:$HOME/.local/share/go/bin/" # go path
