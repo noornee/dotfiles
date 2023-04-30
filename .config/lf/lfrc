@@ -62,4 +62,8 @@ map D delete
 map W set_wallpaper 
 map F push :fzf<space>
 
-
+# view command history
+# map  <up>   cmd-history-prev
+# map  <down> cmd-history-next
+cmap <up>   cmd-history-prev
+cmap <down> cmd-history-next

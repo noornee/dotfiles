@@ -36,5 +36,3 @@ bspc config gapless_monocle      true
 # #######################################################################
 
 bspc rule -a Zathura state=tiled
-bspc rule -a Thunar desktop='^6'
-

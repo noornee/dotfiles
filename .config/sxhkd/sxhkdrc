@@ -156,3 +156,9 @@ super + b
 # launch saved bookmarks and type selected one
 super + shift + {b,@space}
 	xdotool type $(cat "$BOOKMARK_FILE" | dmenu -i -l 50 | cut -d " " -f1)
+
+super + shift + f
+	firefox
+
+super + shift + p
+	firefox --private-window
