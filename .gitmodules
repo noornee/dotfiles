@@ -13,3 +13,6 @@
 [submodule ".config/tmux/plugins/tmux-power"]
 	path = .config/tmux/plugins/tmux-power
 	url = https://github.com/wfxr/tmux-power.git
+[submodule ".config/nvim"]
+	path = .config/nvim
+	url = https://github.com/noornee/nvim.git
