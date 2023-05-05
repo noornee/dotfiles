@@ -23,7 +23,7 @@ cmd open ${{
 				lf -remote "send toggle"
 			done &
 			;;
-		audio/* | application/octet-stream) mpv --audio-display=no $f ;; # using application/octet-stream for my audios because the ones i have on my machine mime-types isnt right so it defaulted to octet-stream
+		audio/* | application/octet-stream) mpv --audio-display=no $fx ;; # using application/octet-stream for my audios because the ones i have on my machine mime-types isnt right so it defaulted to octet-stream
 		video/*) setsid -f mpv $fx -quiet >/dev/null 2>&1 ;;
 		application/pdf|application/vnd*|application/epub*) setsid -f zathura $fx >/dev/null 2>&1 ;;
 		*) for f in $fx; do setsid $OPENER $f > /dev/null 2> /dev/null & done ;;
@@ -54,13 +54,16 @@ cmd set_wallpaper ${{
 	esac
 }}
 
-
+cmd spawn_terminal ${{
+	bspc rule -a Alacritty state=floating --one-shot && alacritty --working-directory $(pwd)
+}}
 # mappings
 map <c-n> push :mkdir<space>
 map <c-t> push :touch<space>
 map D delete
 map W set_wallpaper 
 map F push :fzf<space>
+map <f-2> spawn_terminal
 
 # view command history
 # map  <up>   cmd-history-prev
