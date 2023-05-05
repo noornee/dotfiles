@@ -32,7 +32,7 @@ for i in "${dir[@]}";do
 done
 
 export istore="~/storage/shared/rsync/download" # mobile phone internal storage path
-export estore="/storage/CD77-05B4/Android/data/com.termux/files/rsync" # mobile phone sdcard path
+export estore="/storage/40F5-1410/Android/data/com.termux/files" # mobile phone sdcard path
 
 export BOOKMARK_FILE="$HOME/.local/share/bookmarks.txt"
 
