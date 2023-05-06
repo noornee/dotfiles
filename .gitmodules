@@ -7,12 +7,6 @@
 [submodule ".config/zsh/themes/powerlevel10k"]
 	path = .config/zsh/themes/powerlevel10k
 	url = https://github.com/romkatv/powerlevel10k
-[submodule ".config/tmux/plugins/tpm"]
-	path = .config/tmux/plugins/tpm
-	url = https://github.com/tmux-plugins/tpm.git
-[submodule ".config/tmux/plugins/tmux-power"]
-	path = .config/tmux/plugins/tmux-power
-	url = https://github.com/wfxr/tmux-power.git
 [submodule ".config/nvim"]
 	path = .config/nvim
 	url = https://github.com/noornee/nvim.git
