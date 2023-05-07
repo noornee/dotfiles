@@ -1,5 +1,12 @@
 # dotfiles
 
+clone this repository the normal way orr if you wish to clone it with its submodules, do this =>
+
+```
+git clone --recurse-submodules https://github.com/noornee/dotfiles.git
+```
+
+
 WM: [BSPWM](https://github.com/baskerville/bspwm)
 
 BAR: [Polybar](https://github.com/polybar/polybar)
