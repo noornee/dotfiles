@@ -14,8 +14,9 @@ jobs:
         git config --local user.name "github-actions[bot]"
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
 
+        git submodule update --init .config/nvim
         git submodule update --remote .config/nvim 
 
         git add .
-        git commit -m "chore: beep boop updated nvim dots to match with the remote submodule"
+        git commit -m "chore: beep boop updated nvim submodule to match with the latest commit from the remote one"
         git push
