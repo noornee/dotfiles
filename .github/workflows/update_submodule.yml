@@ -1,0 +1,21 @@
+name: update nvim submodule with remote one
+
+on:
+  workflow_dispatch:
+
+jobs:
+  dispatch:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - name: update submodule
+      run: |
+        git config --local user.name "github-actions[bot]"
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+
+        git submodule update --remote .config/nvim 
+
+        git add .
+        git commit -m "chore: beep boop updated nvim dots to match with the remote submodule"
+        git push
