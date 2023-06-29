@@ -56,7 +56,7 @@ cmd set_wallpaper ${{
 
 # open alacritty in a floating window
 cmd spawn_terminal ${{
-	bspc rule -a Alacritty state=floating --one-shot && alacritty --working-directory $(pwd) &
+	bspc rule -a Alacritty state=floating --one-shot && setsid -f alacritty --working-directory $(pwd)
 }}
 
 
