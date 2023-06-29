@@ -4,12 +4,14 @@
 # #                            AUTOSTART                                #
 # #######################################################################
 
+setxkbmap -option "caps:swapescape" 		# swaps <capslock> with <esc>
 pgrep -x sxhkd > /dev/null || sxhkd & 		# Keybindings
-$HOME/.config/polybar/launch.sh & 			# Polybar
-$HOME/.fehbg & 								# feh wallpaper
+"$HOME/.config/polybar/launch.sh" & 		# Polybar
+"$HOME/.fehbg" & 							# feh wallpaper
 nm-applet &		 							# NetworkManager
 picom -b									# Compositor
 dunst & 									# Notify Daemon
+"$HOME/.local/bin/screenlocker.sh" &		# screen lock
 
 # #######################################################################
 # #                           WINDOWS CONFIG                            #
@@ -36,3 +38,4 @@ bspc config gapless_monocle      true
 # #######################################################################
 
 bspc rule -a Zathura state=tiled
+bspc rule -a "VirtualBox Machine" state=tiled desktop="^6"

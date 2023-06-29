@@ -126,7 +126,8 @@ super + e
 
 # screenshot with scrot
 Print 
-	scrot --select --freeze -e 'notify-send -i /home/noornee/$f "scrot" $f'
+	scrot --select --freeze -e 'notify-send -i /home/noornee/$f "scrot" $f && mv /home/noornee/$f /home/noornee/media/pictures/screenshots/'
+	# scrot --select --freeze -e 'notify-send -i /home/noornee/$f "scrot" $f'
 
 # Adjust Brightness
 XF86MonBrightnessUp 
@@ -162,3 +163,11 @@ super + shift + f
 
 super + shift + p
 	firefox --private-window
+
+# launch tdrop (scratchpad)
+super + F1
+	tdrop -n 0 -a alacritty
+
+super + F2
+	tdrop  -w 95% -h 80% -x 2% -y 10% -n 1 -a alacritty
+	# tdrop  -w 95% -h 80% -x 2% -y 10% -a alacritty

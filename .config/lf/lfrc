@@ -54,9 +54,18 @@ cmd set_wallpaper ${{
 	esac
 }}
 
+# open alacritty in a floating window
 cmd spawn_terminal ${{
-	bspc rule -a Alacritty state=floating --one-shot && alacritty --working-directory $(pwd)
+	bspc rule -a Alacritty state=floating --one-shot && alacritty --working-directory $(pwd) &
 }}
+
+
+# removes executable permission from file
+# most of the files i copy from my phone/external hard-drive to my machine always seem to have the x perm.
+cmd remove_exec ${{
+	chmod -x $fx
+}}
+
 # mappings
 map <c-n> push :mkdir<space>
 map <c-t> push :touch<space>
@@ -64,6 +73,7 @@ map D delete
 map W set_wallpaper 
 map F push :fzf<space>
 map <f-2> spawn_terminal
+map <a-x> remove_exec
 
 # view command history
 # map  <up>   cmd-history-prev

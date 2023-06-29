@@ -14,7 +14,10 @@ user_interface = alternative
 song_list_format = {$4%a - }{%t}|{$8%f$9}$R{$3(%l)$9}
 current_item_prefix = $(cyan)$r$b
 current_item_suffix = $/r$(end)$/b
+now_playing_prefix = $(blue)$r$b
+now_playing_suffix = $/r$(end)$/b
 current_item_inactive_column_prefix = $(magenta)$r
 current_item_inactive_column_suffix = $/r$(end)
 
 execute_on_song_change = ncmpcpp_songinfo
+follow_now_playing_lyrics = yes
