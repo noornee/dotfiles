@@ -126,8 +126,7 @@ super + e
 
 # screenshot with scrot
 Print 
-	scrot --select --freeze -e 'notify-send -i /home/noornee/$f "scrot" $f && mv /home/noornee/$f /home/noornee/media/pictures/screenshots/'
-	# scrot --select --freeze -e 'notify-send -i /home/noornee/$f "scrot" $f'
+	"$HOME/.local/bin/screenshot.sh"
 
 # Adjust Brightness
 XF86MonBrightnessUp 
