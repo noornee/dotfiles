@@ -3,8 +3,7 @@
 SAVE_PATH="$HOME/media/pictures/screenshots"
 
 IMG_OLD=$(scrot --select --freeze -e 'echo $f')
-IMG_NEW=$(echo $IMG_OLD | dmenu -i -p "rename:")
-
+IMG_NEW=$(echo $IMG_OLD | dmenu -i -p "rename:" | tr ' ' '_')
 
 
 # send notfication with notify-send

@@ -24,9 +24,11 @@ alias vid="cd $HOME/media/videos/shows"
 alias pix="cd $HOME/media/pictures/"
 alias doc="cd $HOME/media/documents/"
 alias tut="cd $HOME/media/videos/tutorials/"
+alias tp="cd /tmp"
 alias goenv="cd $HOME/workspace/codenv/go"
 alias codenv="cd $HOME/workspace/codenv/"
 alias rustenv="cd $HOME/workspace/codenv/rs"
 alias zshrc="$EDITOR $ZDOTDIR/.zshrc"
 
 alias nvc="cd $HOME/.config/nvim && nvim init.lua" # neovim config
+alias lg="lazygit"
