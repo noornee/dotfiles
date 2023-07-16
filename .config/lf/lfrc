@@ -1,5 +1,4 @@
-# Note on Image Previews
-# check luke smith's voidrice repo for help setting it up
+# vim:ft=sh
 
 # Basic vars
 set shellopts '-eu'
@@ -8,8 +7,8 @@ set scrolloff 10
 set icons
 set period 1
 set cleaner '~/.config/lf/cleaner'
-set previewer '~/.config/lf/scope'
-set hidden
+set previewer '~/.config/lf/preview'
+# set hidden
 
 # cmds/functions
 cmd open ${{
@@ -32,8 +31,8 @@ cmd open ${{
 
 cmd mkdir $mkdir -p "$(echo $* | tr ' ' '\ ')"
 cmd touch $touch "$(echo $* | tr ' ' '\ ')"
-cmd fzf $nvim $(find . -name "$1" | fzf)
-# cmd fzf $nvim $(find . -name "$1" -type f| fzf)
+cmd fzf $nvim $(fd --glob --type f "*$1*" | fzf)
+# cmd fzf $nvim $(find . -iname "*$1*" | fzf)
 
 cmd delete ${{
 	clear; tput bold setaf 1
@@ -66,6 +65,18 @@ cmd remove_exec ${{
 	chmod -x $fx
 }}
 
+cmd add_exec ${{
+	chmod +x $fx
+}}
+
+cmd zip ${{
+    set -f
+    mkdir $1
+    cp -r $fx $1
+    zip -r $1.zip $1
+    rm -rf $1
+}}
+
 # mappings
 map <c-n> push :mkdir<space>
 map <c-t> push :touch<space>
@@ -73,7 +84,9 @@ map D delete
 map W set_wallpaper 
 map F push :fzf<space>
 map <f-2> spawn_terminal
-map <a-x> remove_exec
+map <a-x> add_exec
+map <a-X> remove_exec
+map Y $printf "%s" "$fx" | xclip -selection clipboard
 
 # view command history
 # map  <up>   cmd-history-prev
