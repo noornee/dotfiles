@@ -1,9 +1,20 @@
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
-# run ssh daemon
-sshd
+# https://stackoverflow.com/questions/20512957/zsh-new-line-prompt-after-each-command
+precmd() {
+    precmd() {
+        echo
+    }
+}
+autoload -U colors && colors
+source $ZDOTDIR/lib/git-prompt.sh 
+setopt PROMPT_SUBST;PS1='%B%{$fg[red]%}[\
+%{$fg[yellow]%}%n\
+%{$fg[green]%}@\
+%{$fg[blue]%}%M \
+%{$fg[magenta]%}%~\
+%{$fg[red]%}]\
+%{$fg[green]%}$(__git_ps1)\
+%{$reset_color%}
+>>%b '
 
 # history
 HISTFILE="$HOME/.cache/zsh/zsh_history"
@@ -56,9 +67,3 @@ alias dbstart="pg_ctl -D /data/data/com.termux/files/usr/var/lib/postgres start"
 source $ZDOTDIR/lib/termsupport.zsh # sets terminal window and tab/icon title
 source $ZDOTDIR/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $ZDOTDIR/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# powerlevel10k theme
-source $ZDOTDIR/themes/powerlevel10k/powerlevel10k.zsh-theme 
-
-# To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
-[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
