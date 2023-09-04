@@ -3,13 +3,9 @@ export ZDOTDIR="$HOME/.config/zsh"
 export GOPATH="$HOME/.local/share/go"
 export EDITOR="/usr/bin/nvim"
 
-export VAGRANT_HOME="$HOME/.virtualbox/vagrant/"
 export CARGO_HOME="$HOME/.local/share/cargo"
 export RUSTUP_HOME="$HOME/.local/share/rustup"
 
-export PATH="$PATH:$HOME/.local/bin" 
-export PATH="$PATH:$HOME/.local/share/go/bin/" # go path
-export PATH="$PATH:$HOME/.local/share/npm/bin/" # npm bin path
 
 export NPM_CONFIG_CACHE="$HOME/.cache/npm/"
 if [[ -d "$HOME/.local/share/npm/" ]]; then
@@ -17,6 +13,12 @@ if [[ -d "$HOME/.local/share/npm/" ]]; then
 else
 	mkdir -p "$HOME/.local/share/npm/"
 fi
+
+
+export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$GOPATH/bin" # go path
+export PATH="$PATH:$CARGO_HOME/bin" # cargo path
+export PATH="$PATH:$NPM_CONFIG_PREFIX/bin" # npm path
 
 # create zsh directory in the cache dir
 if [[ ! -d "$HOME/.cache/zsh" ]];then

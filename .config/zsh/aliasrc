@@ -1,8 +1,5 @@
 #!/usr/bin/zsh
 
-
-#alias nvim="$HOME/.local/neovim/build/bin/nvim"
-#
 alias ls='ls --color=auto'
 alias l='ls -lFh'     #size,show type,human readable
 alias la='ls -lAFh'   #long list,show almost all,show type,human readable
@@ -25,8 +22,9 @@ alias pix="cd $HOME/media/pictures/"
 alias doc="cd $HOME/media/documents/"
 alias tut="cd $HOME/media/videos/tutorials/"
 alias tp="cd /tmp"
-alias goenv="cd $HOME/workspace/codenv/go"
 alias codenv="cd $HOME/workspace/codenv/"
+alias goenv="cd $HOME/workspace/codenv/go"
+alias pyenv="cd $HOME/workspace/codenv/py"
 alias rustenv="cd $HOME/workspace/codenv/rs"
 alias zshrc="$EDITOR $ZDOTDIR/.zshrc"
 

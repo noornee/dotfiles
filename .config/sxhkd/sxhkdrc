@@ -59,7 +59,7 @@ super + bracket{left,right}
 	bspc desktop -f {prev,next}.local
 
 # focus the last node/desktop
-super + {grave,Tab}
+super + Tab
 	bspc {node,desktop} -f last
 
 # focus the older or newer node in the focus history
@@ -114,6 +114,12 @@ super + {Left,Down,Up,Right}
 ##################################################
 # Custom 
 ##################################################
+
+super + grave
+	bsp-layout next --layouts wide,tall,tiled
+
+super + equal
+	bsp-layout set even
 
 super + Return
 	alacritty

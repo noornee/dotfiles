@@ -8,7 +8,7 @@ set icons
 set period 1
 set cleaner '~/.config/lf/cleaner'
 set previewer '~/.config/lf/preview'
-# set hidden
+
 
 # cmds/functions
 cmd open ${{
@@ -24,15 +24,11 @@ cmd open ${{
 			;;
 		audio/* | application/octet-stream) mpv --audio-display=no $fx ;; # using application/octet-stream for my audios because the ones i have on my machine mime-types isnt right so it defaulted to octet-stream
 		video/*) setsid -f mpv $fx -quiet >/dev/null 2>&1 ;;
-		application/pdf|application/vnd*|application/epub*) setsid -f zathura $fx >/dev/null 2>&1 ;;
+		application/pdf|application/epub*) setsid -f zathura $fx >/dev/null 2>&1 ;;
+		application/vnd*) setsid -f libreoffice $fx >/dev/null 2>&1 ;;
 		*) for f in $fx; do setsid $OPENER $f > /dev/null 2> /dev/null & done ;;
     esac
 }}
-
-cmd mkdir $mkdir -p "$(echo $* | tr ' ' '\ ')"
-cmd touch $touch "$(echo $* | tr ' ' '\ ')"
-cmd fzf $nvim $(fd --glob --type f "*$1*" | fzf)
-# cmd fzf $nvim $(find . -iname "*$1*" | fzf)
 
 cmd delete ${{
 	clear; tput bold setaf 1
@@ -53,6 +49,7 @@ cmd set_wallpaper ${{
 	esac
 }}
 
+
 # open alacritty in a floating window
 cmd spawn_terminal ${{
 	bspc rule -a Alacritty state=floating --one-shot && setsid -f alacritty --working-directory $(pwd)
@@ -60,7 +57,6 @@ cmd spawn_terminal ${{
 
 
 # removes executable permission from file
-# most of the files i copy from my phone/external hard-drive to my machine always seem to have the x perm.
 cmd remove_exec ${{
 	chmod -x $fx
 }}
@@ -69,27 +65,46 @@ cmd add_exec ${{
 	chmod +x $fx
 }}
 
-cmd zip ${{
-    set -f
-    mkdir $1
-    cp -r $fx $1
-    zip -r $1.zip $1
-    rm -rf $1
+
+#https://github.com/mwh/dragon
+cmd dragon_drop ${{
+	dragon-drop $fx
 }}
 
+# hide hidden files in the home directory
+cmd on-cd &{{
+	if [[ "$PWD" == "$HOME" ]]; then
+		lf -remote "send $id set hidden false"
+	else
+		lf -remote "send $id set hidden true"
+	fi
+}}
+on-cd # run on startup
+
+# https://github.com/dmulholl/vimv
+cmd bulkrename ${{
+    vimv -- $(basename -a -- $fx)
+
+    lf -remote "send $id load"
+    lf -remote "send $id unselect"
+}}
+
+
+cmd mkdir $mkdir -p "$(echo $* | tr ' ' '\ ')"
+cmd touch $touch "$(echo $* | tr ' ' '\ '| tr ' ' '_')"
+
 # mappings
-map <c-n> push :mkdir<space>
-map <c-t> push :touch<space>
 map D delete
 map W set_wallpaper 
-map F push :fzf<space>
+map C dragon_drop
+map R bulkrename
+map a push :touch<space>
+map Y $printf "%s" "$fx" | xclip -selection clipboard
+map <c-n> push :mkdir<space>
 map <f-2> spawn_terminal
 map <a-x> add_exec
 map <a-X> remove_exec
-map Y $printf "%s" "$fx" | xclip -selection clipboard
 
 # view command history
-# map  <up>   cmd-history-prev
-# map  <down> cmd-history-next
 cmap <up>   cmd-history-prev
 cmap <down> cmd-history-next
