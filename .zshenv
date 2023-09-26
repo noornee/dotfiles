@@ -6,14 +6,12 @@ export EDITOR="/usr/bin/nvim"
 export CARGO_HOME="$HOME/.local/share/cargo"
 export RUSTUP_HOME="$HOME/.local/share/rustup"
 
-
 export NPM_CONFIG_CACHE="$HOME/.cache/npm/"
 if [[ -d "$HOME/.local/share/npm/" ]]; then
 	export NPM_CONFIG_PREFIX="$HOME/.local/share/npm/"
 else
 	mkdir -p "$HOME/.local/share/npm/"
 fi
-
 
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$GOPATH/bin" # go path
@@ -25,18 +23,14 @@ if [[ ! -d "$HOME/.cache/zsh" ]];then
 	mkdir -p "$HOME/.cache/zsh"
 fi
 
-# deletes Desktop and Downloads because i dont use them. these directory automatically create anytime i open slack or firefox :/
-dir=("Desktop" "Downloads")
-for i in "${dir[@]}";do
-	if [[ -d "$HOME/$i" ]];then
-		rmdir "$HOME/$i"
-	fi
-done
-
+# Phone
 export istore="~/storage/shared/rsync/download" # mobile phone internal storage path
 export estore="/storage/40F5-1410/Android/data/com.termux/files" # mobile phone sdcard path
 
 export BOOKMARK_FILE="$HOME/.local/share/bookmarks.txt"
+
+# https://github.com/Cloudef/bemenu
+export BEMENU_OPTS="--tb "#005577" --tf "#CACACA" --hb "#005577" --hf "#CACACA" --hp 10"
 
 # [color codes](https://gist.github.com/JBlond/2fea43a3049b38287e5e9cefc87b2124)
 export LESS_TERMCAP_mb=$'\e[1;32m'
