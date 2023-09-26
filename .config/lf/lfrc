@@ -6,7 +6,7 @@ set ifs "\n"
 set scrolloff 10
 set icons
 set period 1
-set cleaner '~/.config/lf/cleaner'
+set sixel true
 set previewer '~/.config/lf/preview'
 
 
@@ -80,6 +80,9 @@ cmd on-cd &{{
 	fi
 }}
 on-cd # run on startup
+
+# check for xdg backend
+# XDG_BACKEND=wayland
 
 # https://github.com/dmulholl/vimv
 cmd bulkrename ${{

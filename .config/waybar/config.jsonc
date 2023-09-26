@@ -1,0 +1,182 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 40,
+    // "mode": "dock",
+    // "exclusive": true,
+    // "passthrough": false,
+    // "gtk-layer-shell": true,
+
+	"modules-left": ["custom/padd","custom/l_end","hyprland/workspaces","hyprland/window","custom/r_end","custom/l_end","cpu","memory","temperature","custom/r_end","custom/padd"],
+	"modules-center": ["custom/padd","custom/l_end","clock","custom/r_end","custom/padd"],
+	"modules-right": ["custom/padd","custom/l_end","battery","pulseaudio","pulseaudio#microphone","custom/updates","custom/r_end","custom/l_end","tray","custom/r_end"],
+
+    "cpu": {
+        "interval": 10,
+        "format": "󰍛 {usage}%",
+        "format-alt": "{icon0}{icon1}{icon2}{icon3}",
+        "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"]
+    },
+
+    "memory": {
+        "interval": 30,
+        "format": "󰾆 {percentage}%",
+        "format-alt": "󰾅 {used}GB",
+        "max-length": 30,
+        "tooltip": true,
+        "tooltip-format": " {used:0.1f}GB/{total:0.1f}GB"
+    },
+
+    "temperature": {
+		"format": "{temperatureC}°C "
+    },
+
+    "clock": {
+        "format": "{: %I:%M %p 󰃭 %a %d}",
+        "format-alt": "{:󰥔 %H:%M  %b %Y}",
+        "tooltip-format": "<tt><big>{calendar}</big></tt>",
+		"calendar": {
+			"format": {
+				"today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+			}
+		}
+    },
+
+	"hyprland/workspaces": {
+		// "disable-scroll": true,
+		// "all-outputs": true,
+		// "on-click": "activate",
+		"persistent_workspaces": {
+			"1": [],
+			"2": [],
+			"3": [],
+			"4": [],
+			"5": [],
+			"6": [],
+			"7": [],
+			"8": [],
+			"9": [],
+			"10": []
+			},
+		// start
+		"format": "{name}: {icon} ",
+		"format-icons": {
+			"1": "",
+			"2": "",
+			"3": "",
+			"4": "",
+			"5": "",
+			"urgent": "",
+			"focused": "",
+			"default": ""
+		}
+		// end
+    },
+
+    "hyprland/window": {
+        "format": "  {}",
+        "separate-outputs": true,
+        "rewrite": {
+            // "vivek@ArchVivek:(.*)": "$1 ",
+            "(.*) ~": "$1  "
+        }
+	},
+
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 20
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}",
+        "format-muted": "婢",
+        "on-click": "pavucontrol -t 3",
+        "tooltip-format": "{icon} {desc} // {volume}%",
+        "scroll-step": 5,
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        }
+    },
+
+    "pulseaudio#microphone": {
+        "format": "{format_source}",
+        "format-source": "",
+        "format-source-muted": "",
+        "on-click": "pavucontrol -t 4",
+        "tooltip-format": "{format_source} {source_desc} // {source_volume}%",
+        "scroll-step": 5
+    },
+
+    "tray": {
+      "icon-size": 15,
+        "spacing": 9
+    },
+
+    "custom/power": {
+        "format": "{}",
+        "exec": "echo ; echo  logout",
+        "on-click": "~/.config/hypr/scripts/logoutlaunch.sh 2",
+        "interval" : 86400, // once every day
+        "tooltip": true
+    },
+
+// modules for padding //
+
+    "custom/l_end": {
+        "format": " ",
+        "interval" : "once",
+        "tooltip": false
+    },
+
+    "custom/r_end": {
+        "format": " ",
+        "interval" : "once",
+        "tooltip": false
+    },
+
+    "custom/sl_end": {
+        "format": " ",
+        "interval" : "once",
+        "tooltip": false
+    },
+
+    "custom/sr_end": {
+        "format": " ",
+        "interval" : "once",
+        "tooltip": false
+    },
+
+    "custom/rl_end": {
+        "format": " ",
+        "interval" : "once",
+        "tooltip": false
+    },
+
+    "custom/rr_end": {
+        "format": " ",
+        "interval" : "once",
+        "tooltip": false
+    },
+
+    "custom/padd": {
+        "format": "  ",
+        "interval" : "once",
+        "tooltip": false
+    }
+
+}
+
