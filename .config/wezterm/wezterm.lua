@@ -7,9 +7,9 @@ local config = {
 	-- font settings
 	font_size = 14.0,
 	cell_width = 0.9,
-	font = wezterm.font({
-		family = "Iosevka Nerd Font",
-		weight = "Regular",
+	font = wezterm.font_with_fallback({
+		{ family = "Iosevka Nerd Font", weight = "Regular" },
+		"HanaMinA",
 	}),
 
 	-- other

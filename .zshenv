@@ -1,3 +1,6 @@
+export XDG_PICTURES_DIR="$HOME/media/pictures"
+
+
 export LESSHISTFILE="-"
 export ZDOTDIR="$HOME/.config/zsh"
 export GOPATH="$HOME/.local/share/go"
@@ -25,7 +28,7 @@ fi
 
 # Phone
 export istore="~/storage/shared/rsync/download" # mobile phone internal storage path
-export estore="/storage/40F5-1410/Android/data/com.termux/files" # mobile phone sdcard path
+export estore="/storage/2731-1C20/Android/data/com.termux/files" # mobile phone sdcard path
 
 export BOOKMARK_FILE="$HOME/.local/share/bookmarks.txt"
 

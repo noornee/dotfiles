@@ -8,6 +8,13 @@ set icons
 set period 1
 set sixel true
 set previewer '~/.config/lf/preview'
+set hidden true
+
+
+setlocal ~ hidden false # hide hidden files in the home directory
+setlocal ~/workspace hidden false
+# setlocal ~/media/videos/ sortby atime
+# setlocal ~/media/videos/ reverse
 
 
 # cmds/functions
@@ -22,7 +29,7 @@ cmd open ${{
 				lf -remote "send toggle"
 			done &
 			;;
-		audio/* | application/octet-stream) mpv --audio-display=no $fx ;; # using application/octet-stream for my audios because the ones i have on my machine mime-types isnt right so it defaulted to octet-stream
+		audio/* | application/octet-stream) mpv --audio-display=no $fx ;;
 		video/*) setsid -f mpv $fx -quiet >/dev/null 2>&1 ;;
 		application/pdf|application/epub*) setsid -f zathura $fx >/dev/null 2>&1 ;;
 		application/vnd*) setsid -f libreoffice $fx >/dev/null 2>&1 ;;
@@ -40,19 +47,16 @@ cmd delete ${{
 	[ $ans = "y" ] && rm -rf -- $fx
 }}
 
-# set wallpaper with feh
-# make sure the filename of the image you wannna set does not have a semi-colon
+
+# set wallpaper with swaybg
 cmd set_wallpaper ${{
 	case $(file --mime-type $f | cut -d ':' -f2 | xargs) in
-		image/*) feh --bg-fill "$f" ;;
+		image/*)
+			image_path=$(printf "%s" $f)
+			sed -i "2s|.*|swaybg -i \"$image_path\"|" "$HOME/.swaybg" && setsid -f swaybg -i "$f" 2>/dev/null
+			;;
 		*) notify-send --urgency=critical --expire-time=5000 "ERROR: invalid file type/format" "\n<b>hint:</b> remove semi-colon \":\" from filename if its a valid image" ;;
 	esac
-}}
-
-
-# open alacritty in a floating window
-cmd spawn_terminal ${{
-	bspc rule -a Alacritty state=floating --one-shot && setsid -f alacritty --working-directory $(pwd)
 }}
 
 
@@ -71,18 +75,6 @@ cmd dragon_drop ${{
 	dragon-drop $fx
 }}
 
-# hide hidden files in the home directory
-cmd on-cd &{{
-	if [[ "$PWD" == "$HOME" ]]; then
-		lf -remote "send $id set hidden false"
-	else
-		lf -remote "send $id set hidden true"
-	fi
-}}
-on-cd # run on startup
-
-# check for xdg backend
-# XDG_BACKEND=wayland
 
 # https://github.com/dmulholl/vimv
 cmd bulkrename ${{
@@ -92,21 +84,38 @@ cmd bulkrename ${{
     lf -remote "send $id unselect"
 }}
 
+cmd edit-config ${{
+    $EDITOR ~/.config/lf/lfrc
+    lf -remote "send $id source ~/.config/lf/lfrc"
+}}
 
-cmd mkdir $mkdir -p "$(echo $* | tr ' ' '\ ')"
+
+# open alacritty in a floating window
+cmd spawn_terminal ${{
+	# bspc rule -a Alacritty state=floating --one-shot && setsid -f alacritty --working-directory $(pwd)
+	setsid -f wezterm start --cwd $(pwd) 2>/dev/null
+}}
+
+
+
+cmd trash %trash-put $fx && notify-send "Trash-Put" "moved <p>$fx</p> <br>to trash"
+cmd mkdir %mkdir "$@"
 cmd touch $touch "$(echo $* | tr ' ' '\ '| tr ' ' '_')"
 
 # mappings
-map D delete
+map <c-d> delete
+map D trash
 map W set_wallpaper 
 map C dragon_drop
+# map C edit-config
 map R bulkrename
 map a push :touch<space>
-map Y $printf "%s" "$fx" | xclip -selection clipboard
+map Y $printf "%s" "$fx" | wl-copy
 map <c-n> push :mkdir<space>
 map <f-2> spawn_terminal
 map <a-x> add_exec
 map <a-X> remove_exec
+map zh setlocal ~ hidden!
 
 # view command history
 cmap <up>   cmd-history-prev
